@@ -3,13 +3,18 @@
 set nocompatible
 
 " Include Plugins
-" * NERDTree
-" * CtrlP
-" * vim-airline (and fonts)
-" * vim-fugitive
-" * vim-obsession
-" * vim-gitgutter
-" * vim-twig
+" ▸ ack.vim/
+" ▸ ctrlp.vim/
+" ▸ emmet-vim/
+" ▸ nerdtree/
+" ▸ vim-airline/
+" ▸ vim-fugitive/
+" ▸ vim-gitgutter/
+" ▸ vim-less/
+" ▸ vim-multiple-cursors/
+" ▸ vim-obsession/
+" ▸ vim-tmux-navigator/
+" ▸ vim-twig/
 execute pathogen#infect()
 
 " enable loading the plugin files for specific file types
