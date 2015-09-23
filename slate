@@ -1,0 +1,50 @@
+config defaultToCurrentScreen true
+config windowHintsShowIcons   true
+
+# Corrects for my Mac's weird offset.
+alias screenOriginX screenOriginX-4
+alias screenSizeX   screenSizeX+4
+
+# Abstract positions
+alias full      move ${screenOriginX};screenOriginY ${screenSizeX};screenSizeY
+alias lefthalf  move ${screenOriginX};screenOriginY screenSizeX/2;screenSizeY
+alias righthalf move screenSizeX/2;screenOriginY screenSizeX/2+4;screenSizeY
+alias mobile    move screenSizeX/2-240;screenOriginY 480;screenSizeY
+alias center    move ${screenOriginX}+75;screenOriginY+75 screenSizeX-150;screenSizeY-150
+alias centerV   move ${screenOriginX}+75;screenOriginY+75 windowSizeX;screenSizeY-150
+
+bind home:ctrl      ${full}
+bind 0:ctrl         ${full}
+bind /:cmd,alt,ctrl ${full}
+bind ,:cmd,alt,ctrl ${lefthalf}
+bind .:cmd,alt,ctrl ${righthalf}
+bind m:cmd,alt,ctrl ${mobile}
+bind n:cmd,alt,ctrl ${center}
+bind h:cmd,alt,ctrl ${centerV}
+
+bind 1:alt,ctrl throw 0
+bind 2:alt,ctrl throw 1 resize
+
+# Center! (https://github.com/jigish/slate/issues/207)
+bind c:ctrl,alt,cmd move screenOriginX+((screenSizeX-windowSizeX)/2);screenOriginY+((screenSizeY-windowSizeY)/2) windowSizeX;windowSizeY
+
+# Grid Pop-Up
+# bind g:cmd,alt grid padding:5 0:6,4 # for another day.
+
+# Quick Reset. Mostly for editing this file. :)
+bind r:ctrl,cmd relaunch
+
+# Quick toggle for the goog. Comfy one-handed thing.
+bind v:cmd,ctrl,alt focus 'Google Chrome'
+# And for email... ¯\_(ツ)_/¯
+bind b:cmd,ctrl,alt focus 'Mailbox (Beta)'
+
+# iTerm-style focusing. Love this.
+bind right:cmd,ctrl,alt,shift focus right
+bind left:cmd,ctrl,alt,shift  focus left
+bind up:cmd,ctrl,alt,shift    focus up
+bind down:cmd,ctrl,alt,shift  focus down
+
+
+
+
