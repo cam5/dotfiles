@@ -1,0 +1,96 @@
+" Mappings
+
+unmap b
+unmap x
+map <A-x> togglePinTab
+
+map x togglePinTab
+
+map <a-t> LinkHints.activateModeToOpenInNewForegroundTab
+
+map w removeTab
+map $ closeTabsOnRight
+
+map <c-j> previousTab
+map <c-k> nextTab
+map <c-h> goBack
+map <c-l> goForward
+
+" Match to vim more closely; muscle memory
+unmap d
+unmap u
+map <c-d> scrollPageDown
+map <c-u> scrollPageUp
+
+
+" CSS for Link Hints
+div > .vimiumHintMarker {
+  /* linkhint boxes */
+  background: rgba(236, 255, 250, 0.9);
+  border: none;
+  border-radius: 0;
+  padding: 5px;
+  box-shadow: none;
+  transition: opacity 0.2;
+}
+
+div > .vimiumHintMarker span {
+  /* linkhint text */
+  color: black;
+  font-weight: normal;
+  font-size: 12px;
+  font-family: 'Monaco', monospace;
+}
+
+
+" exclusion rules
+" export
+" 1) localStorage.getItem('exclusionRules')
+" 2) echo '__exclusion_rules__' | python -mjson.tool | pbcopy
+" 3) paste below
+" import
+" 1) copy below
+" 2) localStorage.setItem('exclusionRules', '__exclusion_rules__');
+[
+    {
+        "passKeys": "wx/jk` gi",
+        "pattern": "http*://mail.google.com/*"
+    },
+    {
+        "passKeys": "zxcv",
+        "pattern": "http*://smbc-comics.com/*"
+    },
+    {
+        "passKeys": "jkl",
+        "pattern": "https://www.tumblr.com/*"
+    },
+    {
+        "passKeys": "",
+        "pattern": "http*://drive.google.com/*"
+    },
+    {
+        "passKeys": "jJkK",
+        "pattern": "http*://*.myshopify.com/*"
+    },
+    {
+        "passKeys": "jk?du",
+        "pattern": "http*://*.quora.com/*"
+    },
+    {
+        "passKeys": "jkazx[]",
+        "pattern": "http*://*.reddit.com/*"
+    },
+    {
+        "passKeys": "jk",
+        "pattern": "http*://twitter.com/*"
+    },
+    {
+        "passKeys": "",
+        "pattern": "http://vim-adventures.com/*"
+    },
+    {
+        "passKeys": "",
+        "pattern": "http*://inbox.google.com/*"
+    }
+]
+
