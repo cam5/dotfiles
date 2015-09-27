@@ -67,10 +67,11 @@ nnoremap = :tabnext<CR>
   " (Have to tell NERDTree that we want these keys, first)
   " let NERDTreeMapJumpLastChild='\<C-J>'
   " let NERDTreeMapJumpFirstChild='\<C-K>'
-nnoremap J <C-W><Down>
-nnoremap K <C-W><Up>
-nnoremap H <C-W><Left>
-nnoremap L <C-W><Right>
+" once upon a time, we needed this... vim-tmux-navigator gives us <c-j,k,h,l>
+" nnoremap J <C-W><Down>
+" nnoremap K <C-W><Up>
+" nnoremap H <C-W><Left>
+" nnoremap L <C-W><Right>
 
 " Even out the windows easier
 nmap <leader>= <C-W>=
