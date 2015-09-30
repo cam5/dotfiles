@@ -23,7 +23,7 @@ bind n:cmd,alt,ctrl ${center}
 bind h:cmd,alt,ctrl ${centerV}
 
 bind 1:alt,ctrl throw 0
-bind 2:alt,ctrl throw 1 resize
+bind 2:alt,ctrl throw 1
 
 # Center! (https://github.com/jigish/slate/issues/207)
 bind c:ctrl,alt,cmd move screenOriginX+((screenSizeX-windowSizeX)/2);screenOriginY+((screenSizeY-windowSizeY)/2) windowSizeX;windowSizeY
