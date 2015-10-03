@@ -13,6 +13,7 @@ set nocompatible
 " ▸ vim-less/
 " ▸ vim-multiple-cursors/
 " ▸ vim-obsession/
+" ▸ vim-surround/
 " ▸ vim-tmux-navigator/
 " ▸ vim-twig/
 execute pathogen#infect()
