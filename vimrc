@@ -123,3 +123,9 @@ let g:user_emmet_settings = {
 autocmd BufNewFile,BufRead *.scss set ft=scss.css
 autocmd BufNewFile,BufRead *.less set ft=less.css
 
+" Never make a mistake again!
+let g:airline#extensions#syntastic#enabled = 1
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
