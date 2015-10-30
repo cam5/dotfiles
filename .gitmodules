@@ -43,3 +43,6 @@
 [submodule "vim/bundle/syntastic"]
 	path = vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
+[submodule "vim/bundle/PIV"]
+	path = vim/bundle/PIV
+	url = https://github.com/spf13/PIV

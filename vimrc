@@ -17,6 +17,7 @@ set nocompatible
 " ▸ vim-tmux-navigator/
 " ▸ vim-twig/
 " ▸ vim-unimpaired/
+" ▸ PIV/
 execute pathogen#infect()
 
 " enable loading the plugin files for specific file types
