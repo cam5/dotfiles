@@ -93,7 +93,12 @@ nnoremap <Down>  :echoe "Use j"<CR>
 " NERDTree - close if it's all that's left open
 autocmd vimenter * NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-nmap <leader>a :NERDTreeToggle<CR>
+
+"🎶  To the right, to the right 🎶
+let g:NERDTreeWinPos = "right"
+
+" Toggle the File drawer.
+nmap <leader>' :NERDTreeToggle<CR>
 
 " The fancy powerline stuff
 let g:airline_powerline_fonts = 1
