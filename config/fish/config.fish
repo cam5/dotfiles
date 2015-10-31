@@ -25,6 +25,7 @@ alias    phpcsf='~/.composer/vendor/fabpot/php-cs-fixer/php-cs-fixer'
 alias       pac='php app/console'
 alias      mphp='/Applications/MAMP/bin/php/php5.6.2/bin/php'
 alias        wp='/Applications/MAMP/bin/php/php5.6.2/bin/php /usr/local/bin/wp'
+alias       vim='/usr/local/Cellar/macvim/7.4-77/MacVim.app/Contents/MacOS/Vim'
 
 # Networking
 alias myip='curl ipinfo.io'                         # myip:         Public facing IP Address
