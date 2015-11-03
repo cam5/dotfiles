@@ -1,5 +1,6 @@
 config defaultToCurrentScreen true
 config windowHintsShowIcons   true
+config menuBarIconHidden      true
 
 # Corrects for my Mac's weird offset.
 alias screenOriginX screenOriginX-4
