@@ -9,3 +9,9 @@ Host bitbucket.org
   Hostname bitbucket.org
   PreferredAuthentications publickey
   IdentityFile ~/.ssh/bb_rsa
+
+Host cameronhurd.com
+  User root
+  Hostname cameronhurd.com
+  PreferredAuthentications publickey
+  IdentityFile ~/.ssh/do_rsa
