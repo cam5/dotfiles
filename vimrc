@@ -137,6 +137,10 @@ let g:syntastic_scss_checkers = ['scss_lint']
 let g:syntastic_scss_scss_lint_args = '-c ~/.scss-lint.yml'
 let g:syntastic_html_tidy_args = '-config ~/.tidy.conf'
 
+" Automatically close html tags with omni completion
+" and keep editing in between the tags
+imap <silent> </ </<C-X><C-O><Esc>T<hi
+
 " Nice little shortcut for js object tabularizing, via VimCasts
 vmap <leader>; :'<,'>Tabularize /:\zs<CR>
 
