@@ -7,6 +7,7 @@ set nocompatible
 " ▸ ctrlp.vim/
 " ▸ emmet-vim/
 " ▸ nerdtree/
+" ▸ tabular/
 " ▸ vim-airline/
 " ▸ vim-fugitive/
 " ▸ vim-gitgutter/
@@ -135,3 +136,23 @@ let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_scss_checkers = ['scss_lint']
 let g:syntastic_scss_scss_lint_args = '-c ~/.scss-lint.yml'
 let g:syntastic_html_tidy_args = '-config ~/.tidy.conf'
+
+" Nice little shortcut for js object tabularizing, via VimCasts
+vmap <leader>; :'<,'>Tabularize /:\zs<CR>
+
+" Just go absolutely crazy and cede all autonomy to the computers
+" H/T @ http://stackoverflow.com/a/32117566/1779433
+inoremap <silent> :   :<Esc>:call <SID>align(':')<CR>a
+inoremap <silent> =   =<Esc>:call <SID>align('=')<CR>a
+
+function! s:align(aa)
+  let p = '^.*\s'.a:aa.'\s.*$'
+  if exists(':Tabularize') && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+    let column = strlen(substitute(getline('.')[0:col('.')],'[^'.a:aa.']','','g'))
+    let position = strlen(matchstr(getline('.')[0:col('.')],'.*'.a:aa.':\s*\zs.*'))
+    exec 'Tabularize/'.a:aa.'/l1'
+    normal! 0
+    call search(repeat('[^'.a:aa.']*'.a:aa,column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
+  endif
+endfunction
+
