@@ -9,6 +9,7 @@ set nocompatible
 " ▸ nerdtree/
 " ▸ tabular/
 " ▸ vim-airline/
+" ▸ vim-autoclose/
 " ▸ vim-fugitive/
 " ▸ vim-gitgutter/
 " ▸ vim-less/
