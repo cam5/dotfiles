@@ -107,13 +107,15 @@ nmap <leader>' :NERDTreeToggle<CR>
 let g:airline_powerline_fonts = 1
 
 " Because my default theme isn't already handling this.
-highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
-highlight VertSplit cterm=NONE ctermfg=DarkBlue  ctermbg=DarkBlue
+highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=235 gui=NONE guifg=DarkGrey guibg=NONE
+highlight VertSplit cterm=NONE ctermbg=236
+set fillchars=
 
 " Enabling GitGutter (Fish isn't POSIX compliant)
 set shell=/bin/bash
 let g:gitgutter_realtime = 1
 let g:updatetime = 1000
+set numberwidth=5
 
 " Some help for emmet.vim:
 let g:user_emmet_mode='in'
