@@ -42,10 +42,10 @@ alias tmn='tmux new-session -s'
 
 # 🐘  Mamp's binaries are better. Setting them ahead of system PHP
 # allows for wp-cli to leverage the mysqldump command
-set PATH /Applications/MAMP/Library/bin $PATH
+set PATH /Applications/MAMP/bin/php/php5.6.2/bin $PATH
 
 # Homebrew in the PATH 🍺  (brew doctor reccommends this before anything else)
-set -l brew_paths /usr/local/bin /usr/local/sbin /usr/bin /bin /usr/sbin /sbin
+set -l brew_paths /usr/local/bin /usr/local/sbin
 set PATH $brew_paths $PATH
 
 # Powerline

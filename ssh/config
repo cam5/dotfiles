@@ -2,7 +2,7 @@ Host github.com
 	User git
 	Hostname github.com
 	PreferredAuthentications publickey
-	IdentityFile ~/.ssh/gh_rsa
+	IdentityFile ~/.ssh/github_rsa
 
 Host bitbucket.org
   User git
