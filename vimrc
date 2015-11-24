@@ -143,6 +143,9 @@ let g:syntastic_html_tidy_args = '-config ~/.tidy.conf'
 " and keep editing in between the tags
 imap <silent> </ </<C-X><C-O><Esc>T<hi
 
+"" Make emmett a little more like it was in the ST3 days.
+nmap <tab> <C-y>,i
+
 " Nice little shortcut for js object tabularizing, via VimCasts
 vmap <leader>; :'<,'>Tabularize /:\zs<CR>
 
