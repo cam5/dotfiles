@@ -15,3 +15,15 @@ Host cameronhurd.com
   Hostname cameronhurd.com
   PreferredAuthentications publickey
   IdentityFile ~/.ssh/do_rsa
+
+Host dev.adventurouswebdesign.com
+  User root
+  Hostname dev.adventurouswebdesign.com
+  PreferredAuthentications publickey
+  IdentityFile ~/.ssh/do_rsa
+
+Host dev.adventurouswebdesign.com
+  User admin
+  Hostname dev.adventurouswebdesign.com
+  PreferredAuthentications publickey
+  IdentityFile ~/.ssh/do_rsa
