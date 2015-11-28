@@ -69,10 +69,6 @@ fi
 # ssh
 export SSH_KEY_PATH="~/.ssh/id_rsa"
 
-# https://github.com/Valloric/YouCompleteMe/issues/8
-export DYLD_FORCE_FLAT_NAMESPACE=1
-alias vim="~/MacVim.app/Contents/MacOS/Vim"
-
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
