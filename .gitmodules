@@ -52,3 +52,6 @@
 [submodule "host-cambook.local/vim/bundle/YouCompleteMe"]
 	path = host-cambook.local/vim/bundle/YouCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe.git
+[submodule "oh-my-zsh"]
+	path = oh-my-zsh
+	url = https://github.com/robbyrussell/oh-my-zsh/
