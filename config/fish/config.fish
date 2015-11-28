@@ -7,6 +7,8 @@ Plugin "z"
 Plugin "tmux"
 Plugin "osx"
 
+alias c='clear'
+
 # Open in Finder
 alias f='open -a Finder ./'
 
