@@ -55,3 +55,6 @@
 [submodule "oh-my-zsh"]
 	path = oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh/
+[submodule "vim/bundle/limelight"]
+	path = vim/bundle/limelight
+	url = https://github.com/junegunn/limelight.vim

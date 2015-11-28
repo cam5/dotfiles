@@ -8,6 +8,7 @@ set nocompatible
 " ▸ emmet-vim/
 " ▸ nerdtree/
 " ▸ tabular/
+" ▸ limelight/
 " ▸ vim-airline/
 " ▸ vim-autoclose/
 " ▸ vim-fugitive/
@@ -41,6 +42,7 @@ set listchars=tab:▸\ ,eol:¬    " Use the same symbols as TextMate for tabstop
 set nobackup
 set nowritebackup
 set noswapfile
+set scrolloff=999              " keep scrolled line in the middle
 
 " Reload your config
 nmap <leader>r :so ~/.vimrc<CR>
@@ -60,13 +62,24 @@ autocmd BufWritePre * :%s/\s\+$//e
 nmap <leader>l :set list!<CR>
 
 " toggle paste
-nmap <leader>p :set paste!<CR>
+set pastetoggle=<leader>p
 " Copy out to OS X clipboard
 vmap <C-c> :w !pbcopy<CR><CR>
 
 " Map some unobtrusive tab-switching keys
 nnoremap - :tabprevious<CR>
 nnoremap = :tabnext<CR>
+
+" Search Options
+set hlsearch   " Highlight search
+nmap <leader>s :set hlsearch!<CR>
+set magic      " Set magic on, for regular expressions
+set ignorecase " Searches are Non Case-sensitive
+set smartcase
+
+" https://github.com/junegunn/limelight.vim
+let g:limelight_conceal_ctermfg     = 'gray'
+let g:limelight_default_coefficient = 0.7
 
 " For moving between panes easier
   " (Have to tell NERDTree that we want these keys, first)
