@@ -60,6 +60,7 @@ hostname=$(hostname)
 
 if [[ $hostname == 'cambook.local' ]]; then
   alias vim='/usr/local/Cellar/macvim/7.4-77/MacVim.app/Contents/MacOS/Vim'
+  alias dev='mosh admin@dev.adventurouswebdesign.com -- ./stmux'
 fi
 
 # ssh
