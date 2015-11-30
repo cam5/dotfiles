@@ -53,18 +53,14 @@ plugins=(git colored-man colorize github vagrant pip python brew osx zsh-syntax-
 
 source $ZSH/oh-my-zsh.sh
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+# All vim, all the time.
+export EDITOR='vim'
 
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='mvim'
+hostname=$(hostname)
+
+if [[ $hostname == 'cambook.local' ]]; then
+  alias vim='/usr/local/Cellar/macvim/7.4-77/MacVim.app/Contents/MacOS/Vim'
 fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
 
 # ssh
 export SSH_KEY_PATH="~/.ssh/id_rsa"

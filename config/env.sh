@@ -21,4 +21,7 @@ function r() { grep "$1" ${@:2} -R . }
 function mkcd() { mkdir -p "$@" && cd "$_"; }
 
 # Aliases
-alias cppcompile='c++ -std=c++11 -stdlib=libc++'
+alias l='l -lahL'
+alias gs='git status'
+alias gc='git commit'
+alias gd='git diff'
