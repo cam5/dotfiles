@@ -78,3 +78,5 @@ export SSH_KEY_PATH="~/.ssh/id_rsa"
 # Add env.sh
 source ~/.config/env.sh
 
+# Add z.sh
+source ~/.zee/z.sh

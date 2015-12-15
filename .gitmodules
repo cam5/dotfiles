@@ -49,6 +49,9 @@
 [submodule "vim/bundle/vim-autoclose"]
 	path = vim/bundle/vim-autoclose
 	url = https://github.com/Townk/vim-autoclose.git
+[submodule "vim/bundle/vdebug"]
+	path = vim/bundle/vdebug
+	url = https://github.com/joonty/vdebug
 [submodule "host-cambook.local/vim/bundle/YouCompleteMe"]
 	path = host-cambook.local/vim/bundle/YouCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe.git
@@ -58,3 +61,9 @@
 [submodule "vim/bundle/limelight"]
 	path = vim/bundle/limelight
 	url = https://github.com/junegunn/limelight.vim
+[submodule "z"]
+	path = z
+	url = https://github.com/rupa/z.git
+[submodule "zee"]
+	path = zee
+	url = https://github.com/rupa/z
