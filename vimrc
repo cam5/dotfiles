@@ -110,6 +110,10 @@ nnoremap <Down>  :echoe "Use j"<CR>
 " NERDTree - close if it's all that's left open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
+" Wrap text at 80 lines when we're markdowning
+" https://robots.thoughtbot.com/wrap-existing-text-at-80-characters-in-vim
+au BufRead,BufNewFile *.md setlocal textwidth=80
+
 "🎶  To the right, to the right 🎶
 let g:NERDTreeWinPos = "right"
 
