@@ -63,7 +63,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 nmap <leader>l :set list!<CR>
 
 " toggle paste
-set pastetoggle=<leader>p
+nmap <leader>p :set paste!<CR>
 " Copy out to OS X clipboard
 vmap <C-c> :w !pbcopy<CR><CR>
 
