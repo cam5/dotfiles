@@ -31,7 +31,7 @@ syntax enable                  " Syntax-highlighting
 set background=dark            "
 set t_Co=256                   " Post 1950's mode
 set number                     " Show line nos.
-set wrap!                      " Word-wrap off
+set nowrap                      " Word-wrap off
 set ignorecase                 " Case-insensitivity
 set softtabstop=2              " Number of space chars a tab counts for
 set shiftwidth=2               " Number of space chars for indentation
@@ -163,23 +163,10 @@ imap <silent> </ </<C-X><C-O><Esc>T<hi
 
 "" Make emmett a little more like it was in the ST3 days.
 nmap <tab> <C-y>,i
+imap <leader><tab> <C-y>
 
-" Nice little shortcut for js object tabularizing, via VimCasts
+" Nice little shortcuts for js object tabularizing, h/t VimCasts
+vmap <leader>\ :'<,'>Tabularize /\|<CR>:'<,'>Tabularize /=<CR>:'<,'>Tabularize /:\zs<CR>
+vmap <leader>= :'<,'>Tabularize /=<CR>
 vmap <leader>; :'<,'>Tabularize /:\zs<CR>
-
-" Just go absolutely crazy and cede all autonomy to the computers
-" H/T @ http://stackoverflow.com/a/32117566/1779433
-inoremap <silent> :   :<Esc>:call <SID>align(':')<CR>a
-inoremap <silent> =   =<Esc>:call <SID>align('=')<CR>a
-
-function! s:align(aa)
-  let p = '^.*\s'.a:aa.'\s.*$'
-  if exists(':Tabularize') && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
-    let column = strlen(substitute(getline('.')[0:col('.')],'[^'.a:aa.']','','g'))
-    let position = strlen(matchstr(getline('.')[0:col('.')],'.*'.a:aa.':\s*\zs.*'))
-    exec 'Tabularize/'.a:aa.'/l1'
-    normal! 0
-    call search(repeat('[^'.a:aa.']*'.a:aa,column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
-  endif
-endfunction
-
+vmap => :'<,'>Tabularize /=><CR>
