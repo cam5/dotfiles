@@ -43,7 +43,7 @@ set listchars=tab:▸\ ,eol:¬    " Use the same symbols as TextMate for tabstop
 set nobackup
 set nowritebackup
 set noswapfile
-set scrolloff=999              " keep scrolled line in the middle
+set scrolloff=1                " scroll buffer of one line.
 
 " Reload your config
 nmap <leader>r :so ~/.vimrc<CR>
@@ -68,8 +68,15 @@ nmap <leader>p :set paste!<CR>
 vmap <C-c> :w !pbcopy<CR><CR>
 
 " Map some unobtrusive tab-switching keys
-nnoremap - :tabprevious<CR>
-nnoremap = :tabnext<CR>
+nnoremap g- :tabprevious<CR>
+nnoremap g= :tabnext<CR>
+nnoremap <C-w><C-h> :tabprevious<CR>
+nnoremap <C-w><C-l> :tabnext<CR>
+nnoremap <C-w><C-j> :tabprevious<CR>
+nnoremap <C-w><C-k> :tabnext<CR>
+
+" Ayy what is this, a web browser?
+nnoremap <C-t> :tabe<CR>
 
 " Search Options
 set hlsearch   " Highlight search
@@ -129,7 +136,7 @@ highlight VertSplit cterm=NONE ctermbg=236
 set fillchars=
 
 " Enabling GitGutter (Fish isn't POSIX compliant)
-set shell=/bin/bash
+set shell=/usr/local/Cellar/bash/4.3.42/bin/bash
 let g:gitgutter_realtime = 1
 let g:updatetime = 1000
 set numberwidth=5
@@ -159,7 +166,7 @@ let g:syntastic_html_tidy_args = '-config ~/.tidy.conf'
 
 " Automatically close html tags with omni completion
 " and keep editing in between the tags
-imap <silent> </ </<C-X><C-O><Esc>T<hi
+" imap <silent> </ </<C-X><C-O><Esc>T<hi
 
 "" Make emmett a little more like it was in the ST3 days.
 nmap <tab> <C-y>,i
