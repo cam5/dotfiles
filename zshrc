@@ -53,9 +53,6 @@ plugins=(git colored-man colorize github vagrant pip python brew osx zsh-syntax-
 
 source $ZSH/oh-my-zsh.sh
 
-# All vim, all the time.
-export EDITOR='vim'
-
 hostname=$(hostname)
 
 if [[ $hostname == 'cambook.local' ]]; then
