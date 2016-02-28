@@ -63,8 +63,8 @@ let g:html_indent_tags = 'li\|p'
 " Remove trailling whitespace on :w
 autocmd BufWritePre * :%s/\s\+$//e
 
-" shortcut to rapidly toggle `set list`
-nmap <leader>l :set list!<CR>
+" shortcut to rapidly toggle error list
+nmap <leader>l :lopen<CR>
 
 " toggle paste
 nmap <leader>p :set paste!<CR>
@@ -160,6 +160,7 @@ let g:user_emmet_settings = {
 " Never make a mistake again!
 let g:airline#extensions#syntastic#enabled = 1
 let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_aggregate_errors = 1
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
@@ -167,6 +168,7 @@ let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_scss_checkers = ['scss_lint']
 let g:syntastic_scss_scss_lint_args = '-c ~/.scss-lint.yml'
 let g:syntastic_html_tidy_args = '-config ~/.tidy.conf'
+let g:syntastic_php_checkers = ['php', 'phpcs']
 
 " Automatically close html tags with omni completion
 " and keep editing in between the tags
