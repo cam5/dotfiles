@@ -29,6 +29,8 @@ filetype plugin indent on
 
 set omnifunc=syntaxcomplete#Complete
 
+au FileType php set omnifunc=phpcomplete#CompletePHP
+
 syntax enable                  " Syntax-highlighting
 set background=dark            "
 set t_Co=256                   " Post 1950's mode
