@@ -27,3 +27,9 @@ Host dev.adventurouswebdesign.com
   Hostname dev.adventurouswebdesign.com
   PreferredAuthentications publickey
   IdentityFile ~/.ssh/do_rsa
+
+Host 159.203.13.133
+  User root
+  Hostname 159.203.13.133
+  PreferredAuthentications publickey
+  IdentityFile ~/.ssh/do_rsa

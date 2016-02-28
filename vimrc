@@ -27,6 +27,8 @@ execute pathogen#infect()
 " enable loading the plugin files for specific file types
 filetype plugin indent on
 
+set omnifunc=syntaxcomplete#Complete
+
 syntax enable                  " Syntax-highlighting
 set background=dark            "
 set t_Co=256                   " Post 1950's mode
@@ -177,3 +179,8 @@ vmap <leader>\ :'<,'>Tabularize /\|<CR>:'<,'>Tabularize /=<CR>:'<,'>Tabularize /
 vmap <leader>= :'<,'>Tabularize /=<CR>
 vmap <leader>; :'<,'>Tabularize /:\zs<CR>
 vmap => :'<,'>Tabularize /=><CR>
+
+" Let syntastic at some other linters (phpcs), in composer libs
+let $PATH=$PATH . ':' . expand('~/.composer/vendor/bin')
+
+nnoremap <leader>S :SyntasticToggleMode<CR>
