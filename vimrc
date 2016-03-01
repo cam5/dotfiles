@@ -124,6 +124,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 " Wrap text at 80 lines when we're markdowning
 " https://robots.thoughtbot.com/wrap-existing-text-at-80-characters-in-vim
 au BufRead,BufNewFile *.md setlocal textwidth=80
+au BufRead,BufNewFile *.wiki setlocal textwidth=80
 
 "🎶  To the right, to the right 🎶
 let g:NERDTreeWinPos = "right"
@@ -135,8 +136,6 @@ nmap <leader>' :NERDTreeToggle<CR>
 let g:airline_powerline_fonts = 1
 
 " Because my default theme isn't already handling this.
-highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=235 gui=NONE guifg=DarkGrey guibg=NONE
-highlight VertSplit cterm=NONE ctermbg=236
 set fillchars=
 
 " Enabling GitGutter (Fish isn't POSIX compliant)
