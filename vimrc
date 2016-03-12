@@ -48,6 +48,7 @@ set nobackup
 set nowritebackup
 set noswapfile
 set scrolloff=1                " scroll buffer of one line.
+set clipboard=unnamed          " Use the quotestar register for all yank, delete, change, and put operations that have no register explicitly specified
 
 " Reload your config
 nmap <leader>r :so ~/.vimrc<CR>
