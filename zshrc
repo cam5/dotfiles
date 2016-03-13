@@ -49,15 +49,17 @@ CASE_SENSITIVE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colored-man colorize github vagrant pip python brew osx zsh-syntax-highlighting)
+plugins=(git colored-man colorize github vagrant brew osx zsh-syntax-highlighting grunt gulp npm tmux vi-mode wp-cli z zsh_reload)
 
 source $ZSH/oh-my-zsh.sh
 
 hostname=$(hostname)
 
-if [[ $hostname == 'cambook.local' ]]; then
+if [[ $hostname == 'cambook' ]]; then
   alias vim='/usr/local/Cellar/macvim/7.4-77/MacVim.app/Contents/MacOS/Vim'
   alias dev='mosh admin@dev.adventurouswebdesign.com -- ./stmux'
+  alias restartDNS='sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.mDNSResponder.plist \
+    && sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.mDNSResponder.plist'
 fi
 
 # ssh
