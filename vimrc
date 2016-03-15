@@ -191,3 +191,7 @@ nnoremap <leader>S :SyntasticToggleMode<CR>
 " VimWiki
 let g:vimwiki_list = [{'path':'~/.vimwiki'}]
 let g:vimwiki_folding = 'expr'
+
+" Startify
+let g:startify_custom_header =
+        \ map(split(system('date | cowsay -f moose'), '\n'), '"   ". v:val')
