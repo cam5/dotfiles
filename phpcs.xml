@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<ruleset name="Custom Standard">
+  <rule ref="PSR2"/>
+
+  <rule ref="Squiz">
+    <exclude name="Squiz.Commenting.FileComment"/>
+    <exclude name="Squiz.PHP.CommentedOutCode"/>
+    <exclude name="Squiz.WhiteSpace.ObjectOperatorSpacing"/>
+    <exclude name="Squiz.NamingConventions.ConstantCase"/>
+    <exclude name="Squiz.NamingConventions.ValidVariableName.PrivateNoUnderscore"/>
+    <exclude name="Squiz.Operators.ComparisonOperatorUsage.NotAllowed"/>
+    <exclude name="Squiz.Strings.ConcatenationSpacing.Missing"/>
+    <exclude name="Squiz.WhiteSpace.FunctionClosingBraceSpace.SpacingBeforeClose"/>
+    <exclude name="Squiz.WhiteSpace.FunctionSpacing.Before"/>
+    <exclude name="Squiz.WhiteSpace.FunctionSpacing.After"/>
+    <exclude name="Squiz.PHP.DisallowMultipleAssignments.Found"/>
+    <exclude name="Squiz.Files.FileExtension.ClassFound"/>
+    <exclude name="Squiz.Arrays.ArrayDeclaration.CloseBraceNotAligned"/>
+    <exclude name="Squiz.Arrays.ArrayDeclaration.KeyNotAligned"/>
+  </rule>
+
+  <!-- Demote some comment concerns to "warning" status -->
+  <rule ref="Squiz.Commenting.FunctionComment.Missing">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Squiz.Commenting.VariableComment.Missing">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Squiz.Commenting.ClassComment.Missing">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Squiz.WhiteSpace.MemberVarSpacing.Incorrect">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Squiz.Commenting.FunctionComment.MissingShort">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Squiz.Commenting.FunctionComment.MissingParamComment">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Squiz.Commenting.FunctionComment.MissingReturn">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Squiz.Commenting.FunctionComment.SpacingAfterParams">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Squiz.Commenting.ClosingDeclarationComment.Missing">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Squiz.Commenting.FunctionComment.Missing">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Squiz.PHP.DisallowMultipleAssignments.Found">
+    <type>warning</type>
+  </rule>
+
+  <!-- FALSE === $var -->
+  <rule ref="Squiz.Operators.ComparisonOperatorUsage.ImplicitTrue">
+    <type>warning</type>
+  </rule>
+</ruleset>
+

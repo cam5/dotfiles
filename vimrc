@@ -168,6 +168,10 @@ let g:syntastic_scss_checkers = ['scss_lint']
 let g:syntastic_scss_scss_lint_args = '-c ~/.scss-lint.yml'
 let g:syntastic_html_tidy_args = '-config ~/.tidy.conf'
 let g:syntastic_php_checkers = ['php', 'phpcs']
+let g:syntastic_php_phpcs_args = '--report=csv --standard=' . $HOME . '/.phpcs.xml'
+
+let g:syntastic_error_symbol = "✗"
+let g:syntastic_warning_symbol = "⚠"
 
 " Automatically close html tags with omni completion
 " and keep editing in between the tags
