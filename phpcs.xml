@@ -17,6 +17,9 @@
     <exclude name="Squiz.Files.FileExtension.ClassFound"/>
     <exclude name="Squiz.Arrays.ArrayDeclaration.CloseBraceNotAligned"/>
     <exclude name="Squiz.Arrays.ArrayDeclaration.KeyNotAligned"/>
+    <exclude name="Squiz.Classes.ClassDeclaration.EndFileAfterCloseBrace"/>
+    <exclude name="Squiz.Commenting.ClassComment.TagNotAllowed"/>
+    <exclude name="Squiz.Commenting.FunctionComment.InvalidNoReturn"/>
   </rule>
 
   <!-- Demote some comment concerns to "warning" status -->
@@ -29,6 +32,18 @@
   </rule>
 
   <rule ref="Squiz.Commenting.ClassComment.Missing">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Squiz.Commenting.ClassComment.ShortFullStop">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Squiz.Commenting.VariableComment.MissingShort">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Squiz.Commenting.VariableComment.SpacingBeforeTags">
     <type>warning</type>
   </rule>
 
@@ -49,6 +64,18 @@
   </rule>
 
   <rule ref="Squiz.Commenting.FunctionComment.SpacingAfterParams">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Squiz.Commenting.FunctionComment.ParamCommentNotCapital">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Squiz.Commenting.FunctionComment.ParamCommentFullStop">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Squiz.Commenting.FunctionComment.ShortFullStop">
     <type>warning</type>
   </rule>
 
