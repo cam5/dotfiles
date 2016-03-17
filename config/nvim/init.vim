@@ -3,12 +3,15 @@ source ~/.vimrc
 
 execute pathogen#infect('~/.vim/bundle/{}')
 
+" set encoding=utf-8
+set fileencoding=utf-8
+
 nmap <leader>r :so ~/.config/nvim/init.vim<CR>
 
 " let g:airline_left_sep = ''
 " let g:airline_right_sep = ''
 " let g:airline_symbols.branch = ''
-let g:airline_symbols.linenr = ''
+" let g:airline_symbols.linenr = ''
 let g:airline_theme='sierra'
 
 colorscheme sierra
