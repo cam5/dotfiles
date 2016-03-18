@@ -26,3 +26,6 @@ hi SyntasticStyleWarningSign ctermfg=239 ctermbg=none
 hi SpellBad ctermbg=237
 hi SpellCap ctermbg=237
 
+hi Tabline ctermfg=243
+hi TablineSel ctermfg=254
+
