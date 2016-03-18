@@ -31,24 +31,26 @@ set omnifunc=syntaxcomplete#Complete
 
 au FileType php set omnifunc=phpcomplete#CompletePHP
 
-syntax enable                  " Syntax-highlighting
-set background=dark            "
-set t_Co=256                   " Post 1950's mode
-set number                     " Show line nos.
-set nowrap                      " Word-wrap off
-set ignorecase                 " Case-insensitivity
-set softtabstop=2              " Number of space chars a tab counts for
-set shiftwidth=2               " Number of space chars for indentation
-set expandtab                  " Insert space characters whenever the tab key is pressed
-set tabstop=2                  " Space chars inserted when tab key is pressed
-set autoindent                 " Copy indent from current line when starting a new line
-set backspace=indent,eol,start " allow backspacing over everything in insert mode
-set listchars=tab:▸\ ,eol:¬    " Use the same symbols as TextMate for tabstops and EOLs
-set nobackup
-set nowritebackup
-set noswapfile
-set scrolloff=1                " scroll buffer of one line.
-set clipboard=unnamed          " Use the quotestar register for all yank, delete, change, and put operations that have no register explicitly specified
+syntax enable                                        " Syntax-highlighting
+set background=dark                                  "
+set t_Co=256                                         " Post 1950's mode
+set number                                           " Show line nos.
+set nowrap                                           " Word-wrap off
+set ignorecase                                       " Case-insensitivity
+set softtabstop=2                                    " Number of space chars a tab counts for
+set shiftwidth=2                                     " Number of space chars for indentation
+set expandtab                                        " Insert space characters whenever the tab key is pressed
+set tabstop=2                                        " Space chars inserted when tab key is pressed
+set autoindent                                       " Copy indent from current line when starting a new line
+set backspace=indent,eol,start                       " allow backspacing over everything in insert mode
+set list
+set listchars=tab:▸\ ,trail:.,extends:#,nbsp:.       " Highlight trailing whitespace, tabs, and note lines that extend offscreen.
+autocmd filetype html,xml,twig set listchars-=tab:▸\
+set nobackup                                         "\
+set nowritebackup                                    " } We'll take our chances.
+set noswapfile                                       "/
+set scrolloff=1                                      " scroll buffer of one line.
+set clipboard=unnamed                                " Use the quotestar register for all yank, delete, change, and put operations that have no register explicitly specified
 
 " Reload your config
 nmap <leader>r :so ~/.vimrc<CR>
