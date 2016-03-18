@@ -42,6 +42,8 @@ set shiftwidth=2                                     " Number of space chars for
 set expandtab                                        " Insert space characters whenever the tab key is pressed
 set tabstop=2                                        " Space chars inserted when tab key is pressed
 set autoindent                                       " Copy indent from current line when starting a new line
+set smarttab                                         " Why would you want dumb tabs?
+set cursorline                                       " Check yoself
 set backspace=indent,eol,start                       " allow backspacing over everything in insert mode
 set list
 set listchars=tab:▸\ ,trail:.,extends:#,nbsp:.       " Highlight trailing whitespace, tabs, and note lines that extend offscreen.
