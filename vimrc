@@ -75,6 +75,8 @@ nmap <leader>l :lopen<CR>
 nmap <leader>p :set paste!<CR>
 " Copy out to OS X clipboard
 vmap <C-c> :w !pbcopy<CR><CR>
+" Quick yanking to the end of the line
+nnoremap Y y$
 
 " Map some unobtrusive tab-switching keys
 nnoremap g- :tabprevious<CR>
@@ -107,6 +109,11 @@ let g:limelight_default_coefficient = 0.7
 " nnoremap K <C-W><Up>
 " nnoremap H <C-W><Left>
 " nnoremap L <C-W><Right>
+"
+let NERDTreeDirArrowCollapsible = '▾'
+let NERDTreeDirArrowExpandable = '›'
+
+vmap <C-c> :w !pbcopy<CR><CR>
 
 " Even out the windows easier
 nmap <leader>= <C-W>=
@@ -116,6 +123,10 @@ nmap < <C-W><
 nmap > <C-W>>
 " nmap <C-W>, <C-W>-
 " nmap <C-W>. <C-W>+
+
+" Copy that nice little keybinding from vimuim
+nmap << :tabmove -1<CR>
+nmap >> :tabmove +1<CR>
 
 " Get off my lawn (h/t @molly)
 nnoremap <Left>  :echoe "Use h"<CR>
@@ -174,6 +185,8 @@ let g:syntastic_html_tidy_args = '-config ~/.tidy.conf'
 let g:syntastic_php_checkers = ['php', 'phpcs']
 let g:syntastic_php_phpcs_args = '--report=csv --standard=' . $HOME . '/.phpcs.xml'
 let g:syntastic_stl_format = '%E{Err. %e}%B{, }%W{War. %w}'
+let g:syntastic_error_symbol = "➤"
+let g:syntastic_warning_symbol = "➠"
 let g:syntastic_style_error_symbol = "➤"
 let g:syntastic_style_warning_symbol = "➠"
 
