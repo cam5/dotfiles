@@ -23,8 +23,12 @@ highlight clear SpellCap
 
 hi SyntasticStyleErrorSign ctermfg=95 ctermbg=none
 hi SyntasticStyleWarningSign ctermfg=239 ctermbg=none
+hi SyntasticErrorSign ctermfg=95 ctermbg=none
+hi SyntasticWarningSign ctermfg=239 ctermbg=none
 hi SpellBad ctermbg=237
 hi SpellCap ctermbg=237
+
+hi DiffAdd ctermbg=64
 
 hi Tabline ctermfg=243
 hi TablineSel ctermfg=254
