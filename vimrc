@@ -210,7 +210,8 @@ let $PATH=$PATH . ':' . expand('~/.composer/vendor/bin')
 nnoremap <leader>S :SyntasticToggleMode<CR>
 
 " VimWiki
-let g:vimwiki_list = [{'path':'~/.vimwiki'}]
+let g:vimwiki_list = [{'path':'~/.vimwiki',
+  \ 'syntax': 'markdown', 'ext': '.md'}]
 let g:vimwiki_folding = 'expr'
 
 " Startify
