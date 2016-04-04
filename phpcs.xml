@@ -13,6 +13,10 @@
     <exclude name="Squiz.WhiteSpace.FunctionClosingBraceSpace.SpacingBeforeClose"/>
     <exclude name="Squiz.WhiteSpace.FunctionSpacing.Before"/>
     <exclude name="Squiz.WhiteSpace.FunctionSpacing.After"/>
+    <exclude name="Squiz.WhiteSpace.ScopeClosingBrace.ContentBefore"/>
+    <exclude name="Squiz.WhiteSpace.ControlStructureSpacing.SpacingBeforeOpen"/>
+    <exclude name="Squiz.WhiteSpace.ControlStructureSpacing.SpacingAfterClose"/>
+    <exclude name="Squiz.PHP.EmbeddedPhp.NoSemicolon"/>
     <exclude name="Squiz.PHP.DisallowMultipleAssignments.Found"/>
     <exclude name="Squiz.Files.FileExtension.ClassFound"/>
     <exclude name="Squiz.Arrays.ArrayDeclaration.CloseBraceNotAligned"/>
@@ -20,6 +24,7 @@
     <exclude name="Squiz.Classes.ClassDeclaration.EndFileAfterCloseBrace"/>
     <exclude name="Squiz.Commenting.ClassComment.TagNotAllowed"/>
     <exclude name="Squiz.Commenting.FunctionComment.InvalidNoReturn"/>
+    <exclude name="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
   </rule>
 
   <!-- Demote some comment concerns to "warning" status -->
@@ -88,6 +93,10 @@
   </rule>
 
   <rule ref="Squiz.PHP.DisallowMultipleAssignments.Found">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="PSR2.Methods.FunctionCallSignature.Indent">
     <type>warning</type>
   </rule>
 
