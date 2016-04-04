@@ -139,7 +139,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 
 " Wrap text at 80 lines when we're markdowning
 " https://robots.thoughtbot.com/wrap-existing-text-at-80-characters-in-vim
-au BufRead,BufNewFile *.md, *.wiki textwidth=80
+au BufRead,BufNewFile *.md setlocal textwidth=80
 
 "🎶  To the right, to the right 🎶
 let g:NERDTreeWinPos = "right"
@@ -185,10 +185,10 @@ let g:syntastic_html_tidy_args = '-config ~/.tidy.conf'
 let g:syntastic_php_checkers = ['php', 'phpcs']
 let g:syntastic_php_phpcs_args = '--report=csv --standard=' . $HOME . '/.phpcs.xml'
 let g:syntastic_stl_format = '%E{Err. %e}%B{, }%W{War. %w}'
-let g:syntastic_error_symbol = "➤"
-let g:syntastic_warning_symbol = "➠"
-let g:syntastic_style_error_symbol = "➤"
-let g:syntastic_style_warning_symbol = "➠"
+let g:syntastic_error_symbol = "●"
+let g:syntastic_warning_symbol = "●"
+let g:syntastic_style_error_symbol = "●"
+let g:syntastic_style_warning_symbol = "●"
 
 " Automatically close html tags with omni completion
 " and keep editing in between the tags
