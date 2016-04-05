@@ -100,3 +100,31 @@ let g:airline#themes#sierra#palette.ctrlp = airline#extensions#ctrlp#generate_co
       \ [ '#ffffff' , '#875fd7' , 231 , 66  , ''     ],
       \ [ '#5f00af' , '#ffffff' , 234 , 152 , 'bold' ])
 
+
+" Use good ol' FIRECRACKER for the warning indicator!
+let s:WI = [ '#ffffff', '#af5f5f', 231, 131 ]
+let g:airline#themes#sierra#palette.normal.airline_warning = [
+     \ s:WI[0], s:WI[1], s:WI[2], s:WI[3]
+     \ ]
+
+let g:airline#themes#sierra#palette.normal_modified.airline_warning =
+    \ g:airline#themes#sierra#palette.normal.airline_warning
+
+
+let g:airline#themes#sierra#palette.insert.airline_warning =
+    \ g:airline#themes#sierra#palette.normal.airline_warning
+
+let g:airline#themes#sierra#palette.insert_modified.airline_warning =
+    \ g:airline#themes#sierra#palette.normal.airline_warning
+
+let g:airline#themes#sierra#palette.visual.airline_warning =
+    \ g:airline#themes#sierra#palette.normal.airline_warning
+
+let g:airline#themes#sierra#palette.visual_modified.airline_warning =
+    \ g:airline#themes#sierra#palette.normal.airline_warning
+
+let g:airline#themes#sierra#palette.replace.airline_warning =
+    \ g:airline#themes#sierra#palette.normal.airline_warning
+
+let g:airline#themes#sierra#palette.replace_modified.airline_warning =
+    \ g:airline#themes#sierra#palette.normal.airline_warning
