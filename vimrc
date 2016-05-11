@@ -140,6 +140,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 " Wrap text at 80 lines when we're markdowning
 " https://robots.thoughtbot.com/wrap-existing-text-at-80-characters-in-vim
 au BufRead,BufNewFile *.md setlocal textwidth=80
+au BufRead,BufNewFile *.md set ft=markdown
 
 "🎶  To the right, to the right 🎶
 let g:NERDTreeWinPos = "right"
@@ -217,3 +218,11 @@ let g:vimwiki_folding = 'expr'
 " Startify
 let g:startify_custom_header =
         \ map(split(system('date | cowsay -f moose'), '\n'), '"   ". v:val')
+
+nmap <leader>f :echo @%<CR>
+
+" Things I'm in the process of testing
+if filereadable($HOME . "/.vimrc.extra")
+  execute('source ' . $HOME . '/.vimrc.extra')
+endif
+
