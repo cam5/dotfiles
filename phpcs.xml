@@ -8,6 +8,10 @@
     <exclude name="Squiz.WhiteSpace.ObjectOperatorSpacing"/>
     <exclude name="Squiz.NamingConventions.ConstantCase"/>
     <exclude name="Squiz.NamingConventions.ValidVariableName.PrivateNoUnderscore"/>
+    <exclude name="Squiz.NamingConventions.ValidFunctionName.PrivateNoUnderscore"/>
+    <exclude name="Squiz.NamingConventions.ValidVariableName.NotCamelCaps"/>
+    <exclude name="Squiz.Commenting.PostStatementComment.Found"/>
+    <exclude name="Squiz.ControlStructures.ElseIfDeclaration.NotAllowed"/>
     <exclude name="Squiz.Operators.ComparisonOperatorUsage.NotAllowed"/>
     <exclude name="Squiz.Strings.ConcatenationSpacing.Missing"/>
     <exclude name="Squiz.WhiteSpace.FunctionClosingBraceSpace.SpacingBeforeClose"/>
@@ -25,6 +29,9 @@
     <exclude name="Squiz.Commenting.ClassComment.TagNotAllowed"/>
     <exclude name="Squiz.Commenting.FunctionComment.InvalidNoReturn"/>
     <exclude name="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
+    <exclude name="PSR2.Methods.FunctionCallSignature.Indent"/>
+    <exclude name="PSR2.Files.EndFileNewline.TooMany"/>
+    <exclude name="PEAR.Functions.FunctionCallSignature.Indent"/>
   </rule>
 
   <!-- Demote some comment concerns to "warning" status -->
