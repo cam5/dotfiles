@@ -79,3 +79,8 @@ source ~/.config/env.sh
 
 # Add z.sh
 source ~/.zee/z.sh
+
+# Add extra zsh stuff and exclude from dotfiles
+if [[ -a $HOME/.zshrc.extra ]]; then
+  source ~/.zshrc.extra
+fi
