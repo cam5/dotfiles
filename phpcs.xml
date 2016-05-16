@@ -1,6 +1,12 @@
 <?xml version="1.0"?>
 <ruleset name="Custom Standard">
-  <rule ref="PSR2"/>
+  <rule ref="PSR2">
+    <exclude name="PSR2.Methods.FunctionCallSignature.Indent"/>
+    <exclude name="PSR2.Files.EndFileNewline.TooMany"/>
+    <exclude name="PSR2.ControlStructures.SwitchDeclaration.defaultIndent"/>
+    <exclude name="PSR2.ControlStructures.SwitchDeclaration.caseIndent"/>
+    <exclude name="PSR2.ControlStructures.SwitchDeclaration.BreakIndent"/>
+  </rule>
 
   <rule ref="Squiz">
     <exclude name="Squiz.Commenting.FileComment"/>
@@ -29,9 +35,12 @@
     <exclude name="Squiz.Commenting.ClassComment.TagNotAllowed"/>
     <exclude name="Squiz.Commenting.FunctionComment.InvalidNoReturn"/>
     <exclude name="Generic.WhiteSpace.ScopeIndent.Incorrect"/>
-    <exclude name="PSR2.Methods.FunctionCallSignature.Indent"/>
-    <exclude name="PSR2.Files.EndFileNewline.TooMany"/>
     <exclude name="PEAR.Functions.FunctionCallSignature.Indent"/>
+    <exclude name="Squiz.Commenting.VariableComment.TagNotAllowed"/>
+    <exclude name="Squiz.ControlStructures.SwitchDeclaration.CaseIndent"/>
+    <exclude name="Squiz.ControlStructures.SwitchDeclaration.BreakIndent"/>
+    <exclude name="Squiz.ControlStructures.SwitchDeclaration.DefaultIndent"/>
+    <exclude name="Squiz.ControlStructures.SwitchDeclaration.EmptyCase"/>
   </rule>
 
   <!-- Demote some comment concerns to "warning" status -->
