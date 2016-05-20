@@ -54,6 +54,9 @@ set noswapfile                                       "/
 set scrolloff=1                                      " scroll buffer of one line.
 set clipboard=unnamed                                " Use the quotestar register for all yank, delete, change, and put operations that have no register explicitly specified
 
+" Use the spacebar as the leader.
+let mapleader=" "
+
 " Reload your config
 nmap <leader>r :so ~/.vimrc<CR>
 
@@ -147,7 +150,7 @@ au BufRead,BufNewFile *.md set ft=markdown
 let g:NERDTreeWinPos = "right"
 
 " Toggle the File drawer.
-nmap <leader>' :NERDTreeToggle<CR>
+nmap <leader>\ :NERDTreeToggle<CR>
 
 " The fancy powerline stuff
 let g:airline_powerline_fonts = 1
