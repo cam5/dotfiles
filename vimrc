@@ -150,7 +150,7 @@ au BufRead,BufNewFile *.md set ft=markdown
 let g:NERDTreeWinPos = "right"
 
 " Toggle the File drawer.
-nmap <leader>\ :NERDTreeToggle<CR>
+nmap <leader>; :NERDTreeToggle<CR>
 
 " The fancy powerline stuff
 let g:airline_powerline_fonts = 1
