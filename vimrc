@@ -3,25 +3,30 @@
 set nocompatible
 
 " Include Plugins
-" ▸ ack.vim/
-" ▸ ctrlp.vim/
-" ▸ emmet-vim/
-" ▸ nerdtree/
-" ▸ tabular/
-" ▸ limelight/
-" ▸ vdebug/
-" ▸ vim-airline/
-" ▸ vim-autoclose/
-" ▸ vim-fugitive/
-" ▸ vim-gitgutter/
-" ▸ vim-less/
-" ▸ vim-multiple-cursors/
-" ▸ vim-obsession/
-" ▸ vim-surround/
-" ▸ vim-tmux-navigator/
-" ▸ vim-twig/
-" ▸ vim-unimpaired/
-" ▸ PIV/
+"
+" ▸ ag.vim
+" ▸ ctrlp.vim
+" ▸ emmet-vim
+" ▸ goyo
+" ▸ limelight
+" ▸ nerdtree
+" ▸ padawan.vim
+" ▸ phpcomplete.vim
+" ▸ syntastic
+" ▸ tabular
+" ▸ typescript-vim
+" ▸ vim-airline
+" ▸ vim-fugitive
+" ▸ vim-gitgutter
+" ▸ vim-less
+" ▸ vim-obsession
+" ▸ vim-php-cs-fixer
+" ▸ vim-startify
+" ▸ vim-surround
+" ▸ vim-tmux-navigator
+" ▸ vim-twig
+" ▸ vim-unimpaired
+" ▸ vimwiki
 execute pathogen#infect()
 
 " enable loading the plugin files for specific file types
@@ -78,7 +83,16 @@ nmap <leader>r :so ~/.vimrc<CR>
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
 
-" let g:ctrlp_cmd = 'CtrlPMixed'
+let g:ctrlp_use_caching = 0
+if executable('ag')
+    set grepprg=ag\ --nogroup\ --nocolor
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+else
+    let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
+    let g:ctrlp_prompt_mappings = {
+      \ 'AcceptSelection("e")': ['<space>', '<cr>', '<2-LeftMouse>'],
+      \ }
+endif
 
 " Remove trailling whitespace on :w
 autocmd BufWritePre * :%s/\s\+$//e
