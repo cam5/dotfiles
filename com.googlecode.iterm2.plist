@@ -10,6 +10,8 @@
 	<true/>
 	<key>AllowClipboardAccess</key>
 	<false/>
+	<key>AlternateMouseScroll</key>
+	<true/>
 	<key>AnimateDimming</key>
 	<true/>
 	<key>AppleAntiAliasingThreshold</key>
@@ -468,9 +470,9 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>372 134 445 77 0 0 1440 900 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>263 977 606 456 0 0 1920 1080 </string>
+	<string>263 601 606 456 0 0 1920 1080 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>652 516 620 392 0 0 1920 1080 </string>
+	<string>652 343 620 622 0 0 1920 1080 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>99 301 592 584 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
@@ -1255,7 +1257,7 @@
 			<key>Use Canonical Parser</key>
 			<false/>
 			<key>Use HFS Plus Mapping</key>
-			<true/>
+			<false/>
 			<key>Use Italic Font</key>
 			<true/>
 			<key>Use Non-ASCII Font</key>
@@ -2134,6 +2136,8 @@
 	</dict>
 	<key>PrefsCustomFolder</key>
 	<string>/Users/Cam/.dotfiles</string>
+	<key>Print In Black And White</key>
+	<true/>
 	<key>PromptOnQuit</key>
 	<false/>
 	<key>QuitWhenAllWindowsClosed</key>
@@ -2153,9 +2157,9 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-05-18T15:14:32Z</date>
+	<date>2016-06-30T17:17:12Z</date>
 	<key>SUSkippedVersion</key>
-	<string>2.9.20160510</string>
+	<string>3.0.4</string>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>
