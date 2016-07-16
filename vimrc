@@ -31,28 +31,40 @@ set omnifunc=syntaxcomplete#Complete
 
 au FileType php set omnifunc=phpcomplete#CompletePHP
 
-syntax enable                                        " Syntax-highlighting
-set background=dark                                  "
-set t_Co=256                                         " Post 1950's mode
-set number                                           " Show line nos.
-set nowrap                                           " Word-wrap off
-set ignorecase                                       " Case-insensitivity
-set softtabstop=2                                    " Number of space chars a tab counts for
-set shiftwidth=2                                     " Number of space chars for indentation
-set expandtab                                        " Insert space characters whenever the tab key is pressed
-set tabstop=2                                        " Space chars inserted when tab key is pressed
-set autoindent                                       " Copy indent from current line when starting a new line
-set smarttab                                         " Why would you want dumb tabs?
-set cursorline                                       " Check yoself
-set backspace=indent,eol,start                       " allow backspacing over everything in insert mode
-set list
-set listchars=tab:▸\ ,trail:.,extends:#,nbsp:.       " Highlight trailing whitespace, tabs, and note lines that extend offscreen.
-autocmd filetype html,xml,twig set listchars-=tab:▸\
-set nobackup                                         "\
-set nowritebackup                                    " } We'll take our chances.
-set noswapfile                                       "/
-set scrolloff=1                                      " scroll buffer of one line.
-set clipboard=unnamed                                " Use the quotestar register for all yank, delete, change, and put operations that have no register explicitly specified
+syntax enable                                  " Syntax-highlighting
+set t_Co=256                                   " Post 1950's mode
+set number                                     " Show line #s.
+set nowrap                                     " Word-wrap off
+set ignorecase                                 " Case-insensitivity
+set softtabstop=4                              " Number of space chars a tab counts for
+set shiftwidth=4                               " Number of space chars for indentation
+set expandtab                                  " Insert space characters whenever the tab key is pressed
+set tabstop=4                                  " Space chars inserted when tab key is pressed
+set autoindent                                 " Copy indent from current line when starting a new line
+set smarttab                                   " Helps to backspace over space-tabs
+set cursorline                                 " Check yoself
+set backspace=indent,eol,start                 " allow backspacing over everything in insert mode
+set list                                       " \
+set listchars=tab:▸\ ,trail:.,extends:#,nbsp:. " - Highlight trailing whitespace, tabs, and note lines that extend offscreen.
+set nobackup                                   "\
+set nowritebackup                              " } We'll take our chances.
+set noswapfile                                 "/
+set scrolloff=1                                " scroll buffer of one line.
+set clipboard=unnamed                          " Use the quotestar register for all yank, delete, change, and put operations that have no register explicitly specified
+                                               " @h/t: http://vimcasts.org/episodes/accessing-the-system-clipboard-from-vim/
+set hlsearch                                   " Highlight search
+set magic                                      " Set magic on, for regular expressions (special characters)
+set ignorecase                                 " Searches are Non-case-sensitive
+set smartcase                                  " Override the 'ignorecase' option if the search pattern contains upper case characters.
+
+set numberwidth=5
+
+" Use an updated bash, on MacBook
+if hostname() == "cambook.local"
+    set shell=/usr/local/Cellar/bash/4.3.42/bin/bash
+else
+    set shell=/bin/bash
+endif
 
 " Use the spacebar as the leader.
 let mapleader=" "
@@ -93,11 +105,7 @@ nnoremap <C-w><C-k> :tabnext<CR>
 nnoremap <C-t> :tabe<CR>
 
 " Search Options
-set hlsearch   " Highlight search
 nmap <leader>s :set hlsearch!<CR>
-set magic      " Set magic on, for regular expressions
-set ignorecase " Searches are Non Case-sensitive
-set smartcase
 
 " https://github.com/junegunn/limelight.vim
 let g:limelight_conceal_ctermfg     = 'gray'
@@ -155,14 +163,9 @@ nmap <leader>; :NERDTreeToggle<CR>
 " The fancy powerline stuff
 let g:airline_powerline_fonts = 1
 
-" Because my default theme isn't already handling this.
-set fillchars=
-
 " Enabling GitGutter (Fish isn't POSIX compliant)
-set shell=/usr/local/Cellar/bash/4.3.42/bin/bash
 let g:gitgutter_realtime = 1
 let g:updatetime = 1000
-set numberwidth=5
 
 " Some help for emmet.vim:
 let g:user_emmet_mode='in'
@@ -219,9 +222,11 @@ let g:vimwiki_list = [{'path':'~/.vimwiki',
   \ 'syntax': 'markdown', 'ext': '.md'}]
 let g:vimwiki_folding = 'expr'
 
-" Startify
-let g:startify_custom_header =
-        \ map(split(system('date | cowsay -f moose'), '\n'), '"   ". v:val')
+" Startify (but only on MacBook)
+if hostname() == "cambook.local"
+    let g:startify_custom_header =
+            \ map(split(system('date | cowsay -f moose'), '\n'), '"   ". v:val')
+endif
 
 nmap <leader>f :echo @%<CR>
 
