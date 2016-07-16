@@ -3,13 +3,13 @@
 export EDITOR='nvim'
 
 # PATH
-export BREW="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-export SYSTEM="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
+export BREW="/usr/local/bin:/usr/local/sbin"
+export SYSTEM="/usr/bin:/bin:/usr/sbin:/sbin"
 export X11="/usr/X11/bin"
 export RUBY="~/.rvm/bin"
 export MAMP="/Applications/MAMP/bin/php/php5.6.2/bin/php"
 
-export PATH="$BREW:$SYSTEM:$X11:$RUBY"
+export PATH="$BREW:$RUBY:$SYSTEM:$X11"
 
 # Owner
 export USER_NAME="dev"
