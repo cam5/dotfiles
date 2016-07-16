@@ -6,7 +6,7 @@ export EDITOR='nvim'
 export BREW="/usr/local/bin:/usr/local/sbin"
 export SYSTEM="/usr/bin:/bin:/usr/sbin:/sbin"
 export X11="/usr/X11/bin"
-export RUBY="~/.rvm/bin"
+export RUBY="~/.rvm/bin:~/.rvm/gems"
 export MAMP="/Applications/MAMP/bin/php/php5.6.2/bin/php"
 
 export PATH="$BREW:$RUBY:$SYSTEM:$X11"
