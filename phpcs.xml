@@ -12,7 +12,6 @@
     <exclude name="Squiz.Commenting.FileComment"/>
     <exclude name="Squiz.PHP.CommentedOutCode"/>
     <exclude name="Squiz.WhiteSpace.ObjectOperatorSpacing"/>
-    <exclude name="Squiz.NamingConventions.ConstantCase"/>
     <exclude name="Squiz.NamingConventions.ValidVariableName.PrivateNoUnderscore"/>
     <exclude name="Squiz.NamingConventions.ValidFunctionName.PrivateNoUnderscore"/>
     <exclude name="Squiz.NamingConventions.ValidVariableName.NotCamelCaps"/>
@@ -41,6 +40,17 @@
     <exclude name="Squiz.ControlStructures.SwitchDeclaration.BreakIndent"/>
     <exclude name="Squiz.ControlStructures.SwitchDeclaration.DefaultIndent"/>
     <exclude name="Squiz.ControlStructures.SwitchDeclaration.EmptyCase"/>
+    <exclude name="Squiz.Commenting.InlineComment.DocBlock"/>
+    <exclude name="Squiz.Commenting.BlockComment.WrongStart"/>
+    <exclude name="Squiz.PHP.DisallowInlineIf.Found"/>
+    <exclude name="Squiz.PHP.EmbeddedPhp.ContentAfterOpen"/>
+    <exclude name="Squiz.PHP.EmbeddedPhp.ContentBeforeOpen"/>
+    <exclude name="Squiz.PHP.EmbeddedPhp.ContentAfterEnd"/>
+    <exclude name="Squiz.PHP.EmbeddedPhp.ContentBeforeEnd"/>
+    <exclude name="Squiz.PHP.DisallowComparisonAssignment.AssignedComparison"/>
+    <exclude name="Squiz.PHP.EmbeddedPhp.SpacingBeforeClose"/>
+    <exclude name="Squiz.PHP.DisallowComparisonAssignment.AssignedBool"/>
+    <exclude name="Squiz.PHP.DisallowBooleanStatement.Found"/>
   </rule>
 
   <!-- Demote some comment concerns to "warning" status -->
