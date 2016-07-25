@@ -51,9 +51,9 @@ set cursorline                                 " Check yoself
 set backspace=indent,eol,start                 " allow backspacing over everything in insert mode
 set list                                       " \
 set listchars=tab:▸\ ,trail:.,extends:#,nbsp:. " - Highlight trailing whitespace, tabs, and note lines that extend offscreen.
-set nobackup                                   "\
-set nowritebackup                              " } We'll take our chances.
-set noswapfile                                 "/
+set nobackup                                   " \
+set nowritebackup                              " - We'll take our chances.
+set noswapfile                                 " /
 set scrolloff=1                                " scroll buffer of one line.
 set clipboard=unnamed                          " Use the quotestar register for all yank, delete, change, and put operations that have no register explicitly specified
                                                " @h/t: http://vimcasts.org/episodes/accessing-the-system-clipboard-from-vim/
@@ -61,6 +61,7 @@ set hlsearch                                   " Highlight search
 set magic                                      " Set magic on, for regular expressions (special characters)
 set ignorecase                                 " Searches are Non-case-sensitive
 set smartcase                                  " Override the 'ignorecase' option if the search pattern contains upper case characters.
+set fillchars=
 
 set numberwidth=5
 
