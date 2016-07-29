@@ -101,3 +101,6 @@
 [submodule "config/nvim/bundle/deoplete-typescript"]
 	path = config/nvim/bundle/deoplete-typescript
 	url = https://github.com/mhartington/deoplete-typescript
+[submodule "zsh-custom/plugins/zsh-autosuggestions"]
+	path = zsh-custom/plugins/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions
