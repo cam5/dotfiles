@@ -49,7 +49,7 @@ ZSH_CUSTOM=~/.zsh-custom
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colored-man colorize github vagrant brew osx zsh-syntax-highlighting zsh-autosuggestions grunt gulp npm tmux vi-mode wp-cli z zsh_reload)
+plugins=(git battery ssh-agent colored-man colorize github vagrant brew osx zsh-syntax-highlighting zsh-autosuggestions grunt gulp npm vi-mode wp-cli z zsh_reload)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -76,6 +76,8 @@ export SSH_KEY_PATH="~/.ssh/id_rsa"
 
 # Add env.sh
 source ~/.config/env.sh
+
+source ~/.config/aliases.sh
 
 # Add z.sh
 source ~/.zee/z.sh

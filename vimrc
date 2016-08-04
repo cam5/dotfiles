@@ -65,6 +65,9 @@ set fillchars=
 
 set numberwidth=5
 
+" 2-space indent for javascript files.
+autocmd BufRead,BufNewFile *.js,*.ts setlocal shiftwidth=2 softtabstop=2 tabstop=2
+
 " Use an updated bash, on MacBook
 if hostname() == "cambook.local"
     set shell=/usr/local/Cellar/bash/4.3.42/bin/bash
