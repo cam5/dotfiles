@@ -65,8 +65,11 @@ set fillchars=
 
 set numberwidth=5
 
-" 2-space indent for javascript files.
-autocmd BufRead,BufNewFile *.js,*.ts setlocal shiftwidth=2 softtabstop=2 tabstop=2
+colorscheme sierra
+let g:airline_theme='sierra'
+
+" 2-space indent for javascript, bdd files.
+autocmd BufRead,BufNewFile *.js,*.ts,*.feature setlocal shiftwidth=2 softtabstop=2 tabstop=2
 
 " Use an updated bash, on MacBook
 if hostname() == "cambook.local"
