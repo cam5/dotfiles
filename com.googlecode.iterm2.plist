@@ -468,9 +468,9 @@
 	<key>NSWindow Frame NSColorPanel</key>
 	<string>417 610 313 355 0 0 1920 1080 </string>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>372 134 445 77 0 0 1440 900 </string>
+	<string>540 294 445 77 0 0 1920 1080 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>263 601 606 456 0 0 1920 1080 </string>
+	<string>662 620 606 456 0 0 1920 1080 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>652 343 620 622 0 0 1920 1080 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
@@ -496,6 +496,8 @@
 			<string>No</string>
 			<key>Allow Title Reporting</key>
 			<false/>
+			<key>Allow Title Setting</key>
+			<true/>
 			<key>Ambiguous Double Width</key>
 			<false/>
 			<key>Ansi 0 Color</key>
@@ -521,13 +523,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.31982871890068054</real>
+				<real>0.45524013042449951</real>
 				<key>Color Space</key>
 				<string>Calibrated</string>
 				<key>Green Component</key>
-				<real>0.64631879329681396</real>
+				<real>0.63277435302734375</real>
 				<key>Red Component</key>
-				<real>0.64709413051605225</real>
+				<real>0.4602293074131012</real>
 			</dict>
 			<key>Ansi 11 Color</key>
 			<dict>
@@ -579,13 +581,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.14824323356151581</real>
+				<real>0.45524013042449951</real>
 				<key>Color Space</key>
 				<string>Calibrated</string>
 				<key>Green Component</key>
-				<real>0.31521651148796082</real>
+				<real>0.63277435302734375</real>
 				<key>Red Component</key>
-				<real>0.31484112143516541</real>
+				<real>0.4602293074131012</real>
 			</dict>
 			<key>Ansi 3 Color</key>
 			<dict>
@@ -659,13 +661,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.13988123834133148</real>
+				<real>0.1413714736700058</real>
 				<key>Color Space</key>
 				<string>Calibrated</string>
 				<key>Green Component</key>
-				<real>0.13987885415554047</real>
+				<real>0.1413690447807312</real>
 				<key>Red Component</key>
-				<real>0.13988305628299713</real>
+				<real>0.14137327671051025</real>
 			</dict>
 			<key>Background Image Is Tiled</key>
 			<true/>
@@ -1105,7 +1107,7 @@
 			<key>Screen</key>
 			<integer>-1</integer>
 			<key>Scrollback Lines</key>
-			<integer>1000</integer>
+			<integer>2000</integer>
 			<key>Scrollback With Status Bar</key>
 			<true/>
 			<key>Scrollback in Alternate Screen</key>
@@ -1249,7 +1251,7 @@
 			<key>Triggers</key>
 			<array/>
 			<key>Unlimited Scrollback</key>
-			<true/>
+			<false/>
 			<key>Use Bold Font</key>
 			<false/>
 			<key>Use Bright Bold</key>
@@ -2068,6 +2070,10 @@
 	<string>756DE20E-94F0-419D-92B3-3F65ED2636B0</string>
 	<key>NoSyncLastTipTime</key>
 	<real>484758984.380063</real>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
+	<true/>
+	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
+	<integer>0</integer>
 	<key>NoSyncPermissionToShowTip</key>
 	<true/>
 	<key>NoSyncSuppressAnnyoingBellOffer</key>
@@ -2157,9 +2163,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-06-30T17:17:12Z</date>
-	<key>SUSkippedVersion</key>
-	<string>3.0.4</string>
+	<date>2016-08-11T15:19:22Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>
