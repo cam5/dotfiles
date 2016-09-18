@@ -15,7 +15,6 @@ set nocompatible
 " ▸ syntastic
 " ▸ tabular
 " ▸ typescript-vim
-" ▸ vim-airline
 " ▸ vim-fugitive
 " ▸ vim-gitgutter
 " ▸ vim-less
@@ -66,7 +65,26 @@ set fillchars=
 set numberwidth=5
 
 colorscheme sierra
-let g:airline_theme='sierra'
+
+" Focussed statusline
+highlight Statusline term=bold,reverse ctermfg=240 ctermbg=236 guifg=#585858 guibg=#303030
+" Non-focussed statusline
+highlight StatuslineNC term=bold,reverse ctermfg=238 ctermbg=236 guifg=#262626 guibg=#303030
+
+" Statusline format
+set statusline=%F:%l⧸%L%M%r\ %{&ff}%Y\ [%p%%]\%h%w\ %{fugitive#head()}
+"              |  |  | | |   |     |    |     | |   |
+"              |  |  | | |   |     |    |     | |   +-- Git branch
+"              |  |  | | |   |     |    |     | +-- Preview window flag
+"              |  |  | | |   |     |    |     +-- Help buffer flag
+"              |  |  | | |   |     |    +-- Percentage through file in lines
+"              |  |  | | |   |     +-- Type of file in the buffer
+"              |  |  | | |   +-- current fileformat
+"              |  |  | | +-- Readonly flag
+"              |  |  | +-- Modified flag
+"              |  |  +-- Number of lines in buffer.
+"              |  +-- Current line number
+"              +-- Full path to the file in the buffer.
 
 " 2-space indent for javascript, bdd files.
 autocmd BufRead,BufNewFile *.js,*.ts,*.feature setlocal shiftwidth=2 softtabstop=2 tabstop=2
@@ -181,9 +199,6 @@ let g:NERDTreeWinPos = "right"
 " Toggle the File drawer.
 nmap <leader>; :NERDTreeToggle<CR>
 
-" The fancy powerline stuff
-let g:airline_powerline_fonts = 1
-
 " Enabling GitGutter (Fish isn't POSIX compliant)
 let g:gitgutter_realtime = 1
 let g:updatetime = 1000
@@ -201,7 +216,6 @@ let g:user_emmet_settings = {
   \}
 
 " Never make a mistake again!
-let g:airline#extensions#syntastic#enabled = 1
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_auto_loc_list = 0

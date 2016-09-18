@@ -8,9 +8,6 @@ execute pathogen#infect('~/.config/nvim/bundle/{}')
 " Reload this config, not just vimrc.
 nmap <leader>r :so ~/.config/nvim/init.vim<CR>
 
-colorscheme sierra
-let g:airline_theme='sierra'
-
 " Signs
 highlight clear SpellBad
 highlight clear SpellCap
