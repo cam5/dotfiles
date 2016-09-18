@@ -30,7 +30,8 @@ hi TablineSel ctermfg=254
 
 
 " Deoplete!
-let g:deoplete#enable_at_startup = 1
+nnoremap <leader>d :call deoplete#toggle()<CR>
+let g:deoplete#enable_at_startup = 0
 let g:deoplete#enable_camel_case = 1
 let g:deoplete#auto_complete_start_length = 2
 
