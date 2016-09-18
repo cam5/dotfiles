@@ -409,6 +409,8 @@
 	<integer>32</integer>
 	<key>HotkeyCode</key>
 	<integer>49</integer>
+	<key>HotkeyMigratedFromSingleToMulti</key>
+	<true/>
 	<key>HotkeyModifiers</key>
 	<integer>524608</integer>
 	<key>IRMemory</key>
@@ -470,13 +472,15 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>540 294 445 77 0 0 1920 1080 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>662 620 606 456 0 0 1920 1080 </string>
+	<string>343 441 606 456 0 0 1440 900 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>652 343 620 622 0 0 1920 1080 </string>
+	<string>412 208 620 622 0 0 1440 900 </string>
+	<key>NSWindow Frame SharedPreferences</key>
+	<string>245 321 918 381 0 0 1440 900 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>99 301 592 584 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1920 1080 0 0 1920 1080 </string>
+	<string>0 0 1440 900 0 0 1440 900 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -2159,11 +2163,11 @@
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/testing3.xml?shard=78</string>
+	<string>https://iterm2.com/appcasts/testing.xml?shard=78</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-08-11T15:19:22Z</date>
+	<date>2016-09-17T12:16:14Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>
@@ -2224,7 +2228,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>2.9.git.a2220f6da9</string>
+	<string>3.0.git.2b2f92ba49</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
