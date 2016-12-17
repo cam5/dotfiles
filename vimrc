@@ -88,7 +88,7 @@ set statusline=%F:%l⧸%L%M%r\ %{&ff}%Y\ [%p%%]\%h%w\ %{fugitive#head()}\ [%{Syn
 "              +-- Full path to the file in the buffer.
 
 " 2-space indent for javascript, bdd files.
-autocmd BufRead,BufNewFile *.js,*.ts,*.feature setlocal shiftwidth=2 softtabstop=2 tabstop=2
+autocmd BufRead,BufNewFile *.js,*.ts,*.feature,*.scss,*.css setlocal shiftwidth=2 softtabstop=2 tabstop=2
 
 " Use an updated bash, on MacBook
 if hostname() == "cambook.local"
