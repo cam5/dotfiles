@@ -41,3 +41,19 @@ let g:deoplete#omni#functions.php = 'phpcomplete#CompletePHP'
 let g:deoplete#omni_patterns.php  =
     \ '\h\w*\|[^. \t]->\%(\h\w*\)\?\|\h\w*::\%(\h\w*\)\?'
 
+if filereadable($PWD.'/src/tsconfig.json')
+    autocmd! BufWritePost * Neomake
+
+    let g:neomake_typescript_tslint_maker = {
+        \ 'args': [
+            \'%:p',
+            \'--format verbose',
+            \'--type-check',
+            \'--project='.$PWD.'/src/tsconfig.json',
+            \'--exclude="**/node_modules/**"'
+            \],
+        \ 'errorformat': '%E%f[%l\, %c]: %m'
+        \ }
+
+    let g:neomake_typescript_enabled_makers = ['tslint']
+endif
