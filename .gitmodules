@@ -85,24 +85,35 @@
 [submodule "vim/bundle/goyo"]
 	path = vim/bundle/goyo
 	url = https://github.com/junegunn/goyo.vim
+
 [submodule "vim/bundle/vim-php-cs-fixer"]
 	path = vim/bundle/vim-php-cs-fixer
 	url = https://github.com/stephpy/vim-php-cs-fixer
+
 [submodule "vim/bundle/typescript-vim"]
 	path = vim/bundle/typescript-vim
 	url = https://github.com/leafgarland/typescript-vim.git
+
 [submodule "config/nvim/bundle/deoplete.nvim"]
 	path = config/nvim/bundle/deoplete.nvim
 	url = https://github.com/Shougo/deoplete.nvim
-[submodule "config/nvim/bundle/deoplete-typescript"]
-	path = config/nvim/bundle/deoplete-typescript
-	url = https://github.com/mhartington/deoplete-typescript
+
 [submodule "zsh-custom/plugins/zsh-autosuggestions"]
 	path = zsh-custom/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions
+
 [submodule "vim/bundle/vim-javascript-syntax"]
 	path = vim/bundle/vim-javascript-syntax
 	url = https://github.com/jelera/vim-javascript-syntax.git
+
 [submodule "vim/bundle/vim-repeat"]
 	path = vim/bundle/vim-repeat
 	url = git://github.com/tpope/vim-repeat.git
+
+[submodule "vim/bundle/vimproc.vim"]
+	path = vim/bundle/vimproc.vim
+	url = https://github.com/Shougo/vimproc.vim
+
+[submodule "config/nvim/bundle/tsuquyomi"]
+	path = vim/bundle/tsuquyomi
+	url = https://github.com/Quramy/tsuquyomi

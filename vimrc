@@ -223,8 +223,6 @@ let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['jshint']
-let g:syntastic_typescript_checkers = ['tslint']
-let g:syntastic_typescript_tslint_args = '--config ' . $HOME . '/.tslint.json'
 let g:syntastic_scss_checkers = ['scss_lint']
 let g:syntastic_scss_scss_lint_args = '-c ~/.scss-lint.yml'
 let g:syntastic_html_tidy_args = '-config ~/.tidy.conf'
@@ -237,9 +235,6 @@ let g:syntastic_style_error_symbol = "●"
 let g:syntastic_style_warning_symbol = "●"
 
 " Per-Project configs
-if filereadable($PWD . '/tslint.json')
-    let g:syntastic_typescript_tslint_args = '--config ' . $PWD . '/tslint.json'
-endif
 if filereadable($PWD . '/phpcs.xml')
     let g:syntastic_php_phpcs_args = '--report=csv --standard=' . $PWD . '/phpcs.xml'
 endif
