@@ -1,0 +1,18 @@
+#!/bin/sh
+
+if [ $(osascript -e 'application "Spotify" is running') = "true" ] && [ $(osascript -e 'tell application "Spotify" to player state') = "playing" ]
+then
+    artist=`osascript -e 'tell application "Spotify" to artist of current track as string'`;
+    album=`osascript -e 'tell application "Spotify" to album of current track as string'`;
+    track=`osascript -e 'tell application "Spotify" to name of current track as string'`;
+    echo "𝄞 ${track} | ${artist} | ${album}";
+fi
+
+
+if [ $(osascript -e 'application "iTunes" is running') = "true" ] && [ $(osascript -e 'tell application "iTunes" to player state') = "playing" ]
+then
+    artist=`osascript -e 'tell application "iTunes" to artist of current track as string'`;
+    album=`osascript -e 'tell application "iTunes" to album of current track as string'`;
+    track=`osascript -e 'tell application "iTunes" to name of current track as string'`;
+    echo "𝄞 ${track} | ${artist} | ${album}";
+fi
