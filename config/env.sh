@@ -31,6 +31,6 @@ alias gd='git diff'
 # PHP Ctag helper
 alias phpctags='ctags -R --fields=+aimS --languages=php'
 
-if [[ $hostname == 'cambook' ]]; then
+if [[ $hostname == cambook* ]]; then
     alias wp="$MAMP/wp-cli.phar"
 fi
