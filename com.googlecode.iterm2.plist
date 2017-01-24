@@ -501,17 +501,17 @@
 	<key>NSWindow Frame Preferences</key>
 	<string>343 441 606 456 0 0 1440 900 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>652 343 620 622 0 0 1920 1080 </string>
+	<string>42 20 700 502 0 0 1920 1080 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 126 606 469 0 0 1440 900 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>565 493 958 433 0 0 1920 1080 </string>
+	<string>565 594 918 452 0 0 1920 1080 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
-	<string>967 15 937 1029 0 0 1920 1080 </string>
+	<string>1061 20 838 1020 0 0 1920 1080 </string>
 	<key>NSWindow Frame com.apple.typography_panel_TamsynMedium10x20</key>
 	<string>560 755 260 42 0 0 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>22 24 688 833 0 0 1440 900 </string>
+	<string>0 0 1920 1080 0 0 1920 1080 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1286,7 +1286,7 @@
 			<key>Thin Strokes</key>
 			<integer>2</integer>
 			<key>Transparency</key>
-			<real>0.074306582840236682</real>
+			<real>0.039917702764094544</real>
 			<key>Triggers</key>
 			<array/>
 			<key>Unlimited Scrollback</key>
@@ -2114,7 +2114,7 @@
 			<key>Thin Strokes</key>
 			<integer>2</integer>
 			<key>Transparency</key>
-			<real>0.34283589784263951</real>
+			<real>0.094208042512690285</real>
 			<key>Triggers</key>
 			<array/>
 			<key>Unlimited Scrollback</key>
@@ -2149,6 +2149,8 @@
 	<true/>
 	<key>NoSyncDoNotWarnBeforePastingOneLineEndingInNewlineAtShellPrompt_selection</key>
 	<integer>1</integer>
+	<key>NoSyncHaveWarnedAboutIncompatibleSoftware</key>
+	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>756DE20E-94F0-419D-92B3-3F65ED2636B0</string>
 	<key>NoSyncLastTipTime</key>
@@ -2246,9 +2248,9 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-12-09T14:53:16Z</date>
+	<date>2017-01-04T23:22:16Z</date>
 	<key>SUSkippedVersion</key>
-	<string>3.0.12</string>
+	<string>3.0.13</string>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>
@@ -2282,7 +2284,7 @@
 	<key>TripleClickSelectsFullWrappedLines</key>
 	<false/>
 	<key>UKCrashReporterLastCrashReportDate</key>
-	<real>1481161344</real>
+	<real>1483112704</real>
 	<key>URLHandlersByGuid</key>
 	<dict>
 		<key>ssh</key>
