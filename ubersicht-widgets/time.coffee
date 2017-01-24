@@ -6,7 +6,7 @@ render: (output) ->
   "#{output}"
 
 style: """
-  color: #458588
+  color: #5f8787
   font: 17px Tamsyn8x17
   right: 15px
   text-align: left;

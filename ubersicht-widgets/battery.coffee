@@ -10,7 +10,7 @@ style: """
   font: 17px Tamsyn8x17
   top: 5px
   right: 155px
-  color: #FABD2F
+  color: #dfaf5f
   span
     color: #9C9486
 """
