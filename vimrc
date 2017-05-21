@@ -3,35 +3,13 @@
 set nocompatible
 
 " Include Plugins
-"
-" ▸ ag.vim
-" ▸ ctrlp.vim
-" ▸ emmet-vim
-" ▸ goyo
-" ▸ limelight
-" ▸ nerdtree
-" ▸ padawan.vim
-" ▸ phpcomplete.vim
-" ▸ syntastic
-" ▸ tabular
-" ▸ typescript-vim
-" ▸ vim-fugitive
-" ▸ vim-gitgutter
-" ▸ vim-less
-" ▸ vim-obsession
-" ▸ vim-php-cs-fixer
-" ▸ vim-startify
-" ▸ vim-surround
-" ▸ vim-tmux-navigator
-" ▸ vim-twig
-" ▸ vim-unimpaired
-" ▸ vimwiki
 execute pathogen#infect()
 
 " enable loading the plugin files for specific file types
 filetype plugin indent on
 
 set omnifunc=syntaxcomplete#Complete
+set rtp+=/usr/local/opt/fzf
 
 au FileType php set omnifunc=phpcomplete#CompletePHP
 

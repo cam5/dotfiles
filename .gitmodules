@@ -118,3 +118,6 @@
 	path = config/nvim/bundle/neomake
 	url = https://github.com/neomake/neomake.git
 
+[submodule "vim/bundle/fzf.vim"]
+	path = vim/bundle/fzf.vim
+	url = git://github.com/junegunn/fzf.vim
