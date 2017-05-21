@@ -92,7 +92,7 @@ autocmd BufRead,BufNewFile *.js,*.ts,*.feature,*.scss,*.css setlocal shiftwidth=
 
 " Use an updated bash, on MacBook
 if hostname() == "cambook.local"
-    set shell=/usr/local/Cellar/bash/4.3.42/bin/bash
+    set shell=/usr/local/Cellar/bash/4.4.12/bin/bash
 else
     set shell=/bin/bash
 endif
@@ -260,7 +260,11 @@ nnoremap <leader>S :SyntasticToggleMode<CR>
 
 " VimWiki
 let g:vimwiki_list = [{'path':'~/.vimwiki',
-  \ 'syntax': 'markdown', 'ext': '.md'}]
+  \ 'syntax': 'markdown',
+  \ 'ext': '.md',
+  \ 'path_html': '~/vimwiki',
+  \ 'custom_wiki2html': '~/tmp/wiki2html.sh'
+  \ }]
 let g:vimwiki_folding = 'expr'
 
 " Startify (but only on MacBook)
