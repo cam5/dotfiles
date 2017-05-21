@@ -121,3 +121,6 @@
 [submodule "vim/bundle/fzf.vim"]
 	path = vim/bundle/fzf.vim
 	url = git://github.com/junegunn/fzf.vim
+[submodule "vim/bundle/VimCompletesMe"]
+	path = vim/bundle/VimCompletesMe
+	url = git://github.com/ajh17/VimCompletesMe.git
