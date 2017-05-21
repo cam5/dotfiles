@@ -86,10 +86,6 @@
 	path = vim/bundle/goyo
 	url = https://github.com/junegunn/goyo.vim
 
-[submodule "vim/bundle/vim-php-cs-fixer"]
-	path = vim/bundle/vim-php-cs-fixer
-	url = https://github.com/stephpy/vim-php-cs-fixer
-
 [submodule "vim/bundle/typescript-vim"]
 	path = vim/bundle/typescript-vim
 	url = https://github.com/leafgarland/typescript-vim.git
