@@ -260,6 +260,8 @@ fu! FzfTagsCurrentWord()
 endfu
 
 nmap <c-]> :call FzfTagsCurrentWord()<CR>
+nmap <c-p> :Files<CR>
+nmap <c-b> :Buffers<CR>
 
 " Things I'm in the process of testing
 if filereadable($HOME . "/.vimrc.extra")
