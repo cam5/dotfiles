@@ -253,8 +253,17 @@ endif
 
 nmap <leader>f :echo @%<CR>
 
+" Fzf + Tags
+fu! FzfTagsCurrentWord()
+  let currWord = expand('<cword>')
+  call fzf#vim#tags(currWord)
+endfu
+
+nmap <c-]> :call FzfTagsCurrentWord()<CR>
+
 " Things I'm in the process of testing
 if filereadable($HOME . "/.vimrc.extra")
   execute('source ' . $HOME . '/.vimrc.extra')
 endif
+
 
