@@ -51,7 +51,6 @@ resize + shift - l       :    kwmc window -c reduce 0.05 east
 
 # Set Temporary Window Container
 ctrl - 0                 :    kwmc window -z fullscreen
-prefix - f               :    kwmc window -z fullscreen
 prefix - d               :    kwmc window -z parent
 prefix - w               :    kwmc window -t focused
 
@@ -83,8 +82,6 @@ ctrl + alt - m           :    kwmc window -s mark
 # Pseudo containers
 cmd + ctrl + alt - p     :    kwmc tree -pseudo create
 cmd + ctrl + alt - o     :    kwmc tree -pseudo destroy
-ctrl + alt - p           :    kwmc window -s prev
-ctrl + alt - n           :    kwmc window -s next
 
 # Detach Focused Window And Reinsert In Direction
 ctrl + shift - k         :    kwmc window -m north
@@ -127,9 +124,6 @@ resize + shift - down    :    kwmc space -p decrease bottom
 prefix - o               :    kwmc scratchpad add
 prefix + shift - o       :    kwmc scratchpad remove
 prefix - p               :    kwmc scratchpad toggle
-
-# Open Programs
-cmd - return ![Canary,Google Chrome] : open -na /Applications/Google\ Chrome.app
 
 # Space Traversing
 prefix - 0x32      : kwmc space -fExperimental previous
