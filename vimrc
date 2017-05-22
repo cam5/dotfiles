@@ -263,6 +263,18 @@ endfu
 nmap <c-]> :call FzfTagsCurrentWord()<CR>
 nmap <c-p> :Files<CR>
 nmap <c-b> :Buffers<CR>
+nmap <c-f> :Find
+
+" --column: Show column number
+" --line-number: Show line number
+" --no-heading: Do not show file headings in results
+" --fixed-strings: Search term as a literal string
+" --ignore-case: Case insensitive search
+" --no-ignore: Do not respect .gitignore, etc...
+" --hidden: Search hidden files and folders
+" --glob: Additional conditions for search (in this case ignore everything in the .git/ folder and the tags file)
+" --color: Search color options
+command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --glob "!{.git/*,tags}" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 
 " Things I'm in the process of testing
 if filereadable($HOME . "/.vimrc.extra")
