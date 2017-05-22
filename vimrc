@@ -50,9 +50,10 @@ highlight Statusline term=bold,reverse ctermfg=240 ctermbg=236 guifg=#585858 gui
 highlight StatuslineNC term=bold,reverse ctermfg=238 ctermbg=236 guifg=#262626 guibg=#303030
 
 " Statusline format
-set statusline=%F:%l⧸%L%M%r\ %{&ff}%Y\ [%p%%]\%h%w\ %{fugitive#head()}\ [%{SyntasticStatuslineFlag()}]
+set statusline=%F:%l⧸%L%M%r\ %{&ff}%Y\ [%p%%]\%h%w\ %{fugitive#head()}\ [%{ALEGetStatusLine()}]
 "              |  |  | | |   |     |    |     | |   |                   |
-"              |  |  | | |   |     |    |     | |   |                   +-- [Syntastic errors]
+"              |  |  | | |   |     |    |     | |   |                   +-- [Ale errors]
+"              |  |  | | |   |     |    |     | |   |
 "              |  |  | | |   |     |    |     | |   +-- Git branch
 "              |  |  | | |   |     |    |     | +-- Preview window flag
 "              |  |  | | |   |     |    |     +-- Help buffer flag
