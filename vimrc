@@ -38,6 +38,7 @@ set modeline                                   " allows vim settings to be loade
 set shell=/bin/bash                            " use bash as default shell
 set numberwidth=5
 set omnifunc=syntaxcomplete#Complete           " By default, just see what completions are offered based on the syntax
+set relativenumber
 
 " enable loading the plugin files for specific file types
 filetype plugin on
