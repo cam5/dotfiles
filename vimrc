@@ -1,3 +1,5 @@
+" vim:fdm=marker
+
 " Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
@@ -39,10 +41,13 @@ set magic                                      " Set magic on, for regular expre
 set ignorecase                                 " Searches are Non-case-sensitive
 set smartcase                                  " Override the 'ignorecase' option if the search pattern contains upper case characters.
 set fillchars=
+set modeline
 
 set numberwidth=5
 
 colorscheme sierra
+
+" statusline {{{
 
 " Focussed statusline
 highlight Statusline term=bold,reverse ctermfg=240 ctermbg=236 guifg=#585858 guibg=#303030
@@ -65,6 +70,8 @@ set statusline=%F:%l⧸%L%M%r\ %{&ff}%Y\ [%p%%]\%h%w\ %{fugitive#head()}\ [%{ALE
 "              |  |  +-- Number of lines in buffer.
 "              |  +-- Current line number
 "              +-- Full path to the file in the buffer.
+
+" }}}
 
 " 2-space indent for javascript, bdd files.
 autocmd BufRead,BufNewFile *.js,*.ts,*.feature,*.scss,*.css setlocal shiftwidth=2 softtabstop=2 tabstop=2
@@ -280,5 +287,4 @@ command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-h
 if filereadable($HOME . "/.vimrc.extra")
   execute('source ' . $HOME . '/.vimrc.extra')
 endif
-
 
