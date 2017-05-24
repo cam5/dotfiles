@@ -145,12 +145,11 @@ command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-h
 " }}}
 
 " limelight {{{
-nmap <leader>ll :Limelight!! 0.8<CR>
+nmap <leader>ll :Limelight!!0.8<CR>
 
 " https://github.com/junegunn/limelight.vim
 let g:limelight_conceal_ctermfg     = 'gray'
 let g:limelight_paragraph_span      = 3
-let g:limelight_default_coefficient = 0.9
 " }}}
 
 " NERDTree {{{
