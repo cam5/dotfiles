@@ -54,10 +54,6 @@
 	path = zee
 	url = https://github.com/rupa/z
 
-[submodule "vim/bundle/phpcomplete.vim"]
-	path = vim/bundle/phpcomplete.vim
-	url = https://github.com/shawncplus/phpcomplete.vim.git
-
 [submodule "vim/bundle/vim-startify"]
 	path = vim/bundle/vim-startify
 	url = https://github.com/mhinz/vim-startify
@@ -107,3 +103,6 @@
 [submodule "vim/bundle/ale"]
 	path = vim/bundle/ale
 	url = git://github.com/w0rp/ale
+[submodule "vim/bundle/phpcd.vim"]
+	path = vim/bundle/phpcd.vim
+	url = git://github.com/lvht/phpcd.vim
