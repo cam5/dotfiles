@@ -8,10 +8,10 @@ export BREW="/usr/local/bin:/usr/local/sbin"
 export SYSTEM="/usr/bin:/bin:/usr/sbin:/sbin"
 export X11="/usr/X11/bin"
 export RUBY="~/.rvm/bin:~/.rvm/gems"
-export COMPOSER="~/.composer/vendor/bin"
+# export COMPOSER="~/.composer/vendor/bin"
 export MAMP="/Applications/MAMP/bin/php/${PHP_VERSION}/bin"
 
-export PATH="$MAMP:$COMPOSER:$BREW:$RUBY:$SYSTEM:$X11"
+export PATH="$MAMP:$BREW:$RUBY:$SYSTEM:$X11"
 
 # Owner
 export USER_NAME="dev"

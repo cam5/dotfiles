@@ -86,3 +86,5 @@ source ~/.zee/z.sh
 if [[ -a $HOME/.zshrc.extra ]]; then
   source ~/.zshrc.extra
 fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
