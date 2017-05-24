@@ -39,6 +39,7 @@ set shell=/bin/bash                            " use bash as default shell
 set numberwidth=5
 set omnifunc=syntaxcomplete#Complete           " By default, just see what completions are offered based on the syntax
 set relativenumber
+set rtp+=~/.fzf                                " Add fzf's dir to runtimepath... it has vim plugs in it.
 
 " enable loading the plugin files for specific file types
 filetype plugin on
@@ -216,6 +217,9 @@ if hostname() == "cambook.local"
     " Use our goofy cowsay header when we know the binary is available
     let g:startify_custom_header =
             \ map(split(system('date | cowsay -f moose'), '\n'), '"   ". v:val')
+
+    " Indicates we installed with brew
+    set rtp+=/usr/local/opt/fzf
 endif
 "}}}
 
