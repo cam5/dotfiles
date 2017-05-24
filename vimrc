@@ -7,14 +7,7 @@ set nocompatible
 " Include Plugins
 execute pathogen#infect()
 
-" enable loading the plugin files for specific file types
-filetype plugin indent on
-
-set omnifunc=syntaxcomplete#Complete
-set rtp+=/usr/local/opt/fzf
-
-au FileType php set omnifunc=phpcomplete#CompletePHP
-
+"initial settings {{{
 syntax enable                                  " Syntax-highlighting
 set t_Co=256                                   " Post 1950's mode
 set number                                     " Show line #s.
@@ -41,16 +34,159 @@ set magic                                      " Set magic on, for regular expre
 set ignorecase                                 " Searches are Non-case-sensitive
 set smartcase                                  " Override the 'ignorecase' option if the search pattern contains upper case characters.
 set fillchars=
-set modeline
-
+set modeline                                   " allows vim settings to be loaded using modeline syntax at head/foot of files
+set shell=/bin/bash                            " use bash as default shell
 set numberwidth=5
+set omnifunc=syntaxcomplete#Complete           " By default, just see what completions are offered based on the syntax
 
+" enable loading the plugin files for specific file types
+filetype plugin on
+
+" enable indentation file based on file type
+filetype indent on
+
+" Use the wonderful sierra as default colourscheme
 colorscheme sierra
 
-" statusline {{{
+" Use the spacebar as the leader.
+let mapleader=" "
 
+" Treat <li> and <p> tags like the block tags they are
+let g:html_indent_tags = 'li\|p'
+
+" Let linter at some other linters (phpcs), in composer libs
+let $PATH=$PATH . ':' . expand('~/.composer/vendor/bin')
+"}}}
+
+" autocmds {{{
+" Remove trailling whitespace on :w
+autocmd BufWritePre * :%s/\s\+$//e
+
+" 2-space indent for certain filetypes.
+autocmd BufRead,BufNewFile *.js,*.ts,*.feature,*.scss,*.css setlocal shiftwidth=2 softtabstop=2 tabstop=2
+
+" Wrap text at 80 lines when we're markdowning @see https://robots.thoughtbot.com/wrap-existing-text-at-80-characters-in-vim
+autocmd BufRead,BufNewFile *.md setlocal textwidth=80
+autocmd BufRead,BufNewFile *.md set ft=markdown
+
+" Specify that for PHP files, use phpcomplete as the omnifunc
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+"}}}
+
+" foundational-aliases {{{
+" Go back to normal mode
+:inoremap kj <Esc>
+
+" Reload config
+nmap <leader>r :so ~/.vimrc<CR>
+
+" shortcut to rapidly toggle error list
+nmap <leader>l :lopen<CR>
+
+" toggle paste
+nmap <leader>p :set paste!<CR>
+
+" Search Options
+nmap <leader>s :set hlsearch!<CR>
+
+" Quick yanking to the end of the line
+nnoremap Y y$
+"}}}
+
+" window-tab-navigation {{{
+" Map some unobtrusive tab-switching keys
+nnoremap g- :tabprevious<CR>
+nnoremap g= :tabnext<CR>
+nnoremap <C-w><C-h> :tabprevious<CR>
+nnoremap <C-w><C-l> :tabnext<CR>
+nnoremap <C-w><C-j> :tabprevious<CR>
+nnoremap <C-w><C-k> :tabnext<CR>
+
+" Ayy what is this, a web browser?
+nnoremap <C-t> :tabe<CR>
+
+" Even out the windows easier
+nmap <leader>= <C-W>=
+
+" Window resizing (narrower-width, wider-width, shorter-height, taller-height)
+nmap < <C-W><
+nmap > <C-W>>
+"}}}
+
+" plugin-configs {{{
+" FZF {{{
+" Extend the runtimepath to include wherever you've installed FZF...
+set rtp+=/usr/local/opt/fzf
+
+" Aliases
+nmap <c-]><c-]> :call FzfTagsCurrentWord()<CR>
+nmap <c-p> :Files<CR>
+nmap <c-b> :Buffers<CR>
+nmap <c-f> :Find<space>
+
+" Populates FZF with a search based on the word under the cursor
+function! FzfTagsCurrentWord()
+  let currWord = expand('<cword>')
+  call fzf#vim#tags(currWord)
+endfunction
+
+" h/t http://bit.ly/2qeNqPc
+command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --glob "!{.git/*,tags}" --color "always" '.shellescape(<q-args>), 1, <bang>0)
+" --column: Show column number
+" --line-number: Show line number
+" --no-heading: Do not show file headings in results
+" --fixed-strings: Search term as a literal string
+" --ignore-case: Case insensitive search
+" --no-ignore: Do not respect .gitignore, etc...
+" --hidden: Search hidden files and folders
+" --glob: Additional conditions for search (in this case ignore everything in the .git/ folder and the tags file)
+" --color: Search color options
+" }}}
+
+" limelight {{{
+nmap <leader>ll :Limelight!! 0.8<CR>
+
+" https://github.com/junegunn/limelight.vim
+let g:limelight_conceal_ctermfg     = 'gray'
+let g:limelight_paragraph_span      = 3
+let g:limelight_default_coefficient = 0.9
+" }}}
+
+" NERDTree {{{
+" Close if it's all that's left open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+"🎶  To the right, to the right 🎶
+let g:NERDTreeWinPos = "right"
+
+" Toggle the File drawer.
+nmap <leader>; :NERDTreeToggle<CR>
+" }}}
+
+" tabularize {{{
+" Nice little shortcuts for js object tabularizing, h/t VimCasts
+vmap <leader>\ :'<,'>Tabularize /\|<CR>:'<,'>Tabularize /=<CR>:'<,'>Tabularize /:\zs<CR>
+vmap <leader>= :'<,'>Tabularize /=<CR>
+vmap <leader>; :'<,'>Tabularize /:\zs<CR>
+vmap => :'<,'>Tabularize /=><CR>
+" }}}
+
+" VimWiki {{{
+let g:vimwiki_list = [{'path':'~/.vimwiki',
+  \ 'syntax': 'markdown',
+  \ 'ext': '.md',
+  \ 'path_html': '~/vimwiki',
+  \ 'custom_wiki2html': '~/tmp/wiki2html.sh'
+  \ }]
+
+let g:vimwiki_folding = 'expr'
+" }}}
+"}}}
+
+" statusline {{{
 " Focussed statusline
 highlight Statusline term=bold,reverse ctermfg=240 ctermbg=236 guifg=#585858 guibg=#303030
+
 " Non-focussed statusline
 highlight StatuslineNC term=bold,reverse ctermfg=238 ctermbg=236 guifg=#262626 guibg=#303030
 
@@ -70,218 +206,18 @@ set statusline=%F:%l⧸%L%M%r\ %{&ff}%Y\ [%p%%]\%h%w\ %{fugitive#head()}\ [%{ALE
 "              |  |  +-- Number of lines in buffer.
 "              |  +-- Current line number
 "              +-- Full path to the file in the buffer.
+"}}}
 
-" }}}
-
-" 2-space indent for javascript, bdd files.
-autocmd BufRead,BufNewFile *.js,*.ts,*.feature,*.scss,*.css setlocal shiftwidth=2 softtabstop=2 tabstop=2
-
-" Use an updated bash, on MacBook
+" macbook-only {{{
 if hostname() == "cambook.local"
     set shell=/usr/local/Cellar/bash/4.4.12/bin/bash
-else
-    set shell=/bin/bash
-endif
-
-" Use the spacebar as the leader.
-let mapleader=" "
-
-" Reload your config
-nmap <leader>r :so ~/.vimrc<CR>
-
-" Go back to normal mode
-:inoremap kj <Esc>
-
-" Treat <li> and <p> tags like the block tags they are
-let g:html_indent_tags = 'li\|p'
-
-let g:ctrlp_use_caching = 0
-if executable('ag')
-    set grepprg=ag\ --nogroup\ --nocolor
-    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-else
-    let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
-    let g:ctrlp_prompt_mappings = {
-      \ 'AcceptSelection("e")': ['<space>', '<cr>', '<2-LeftMouse>'],
-      \ }
-endif
-
-" Remove trailling whitespace on :w
-autocmd BufWritePre * :%s/\s\+$//e
-
-" shortcut to rapidly toggle error list
-nmap <leader>l :lopen<CR>
-
-" toggle paste
-nmap <leader>p :set paste!<CR>
-" Copy out to OS X clipboard
-vmap <C-c> :w !pbcopy<CR><CR>
-" Quick yanking to the end of the line
-nnoremap Y y$
-
-" Map some unobtrusive tab-switching keys
-nnoremap g- :tabprevious<CR>
-nnoremap g= :tabnext<CR>
-nnoremap <C-w><C-h> :tabprevious<CR>
-nnoremap <C-w><C-l> :tabnext<CR>
-nnoremap <C-w><C-j> :tabprevious<CR>
-nnoremap <C-w><C-k> :tabnext<CR>
-
-" Ayy what is this, a web browser?
-nnoremap <C-t> :tabe<CR>
-
-" Search Options
-nmap <leader>s :set hlsearch!<CR>
-
-" https://github.com/junegunn/limelight.vim
-let g:limelight_conceal_ctermfg     = 'gray'
-let g:limelight_paragraph_span      = 1
-let g:limelight_default_coefficient = 0.7
-
-" For moving between panes easier
-  " (Have to tell NERDTree that we want these keys, first)
-  " let NERDTreeMapJumpLastChild='\<C-J>'
-  " let NERDTreeMapJumpFirstChild='\<C-K>'
-" once upon a time, we needed this... vim-tmux-navigator gives us <c-j,k,h,l>
-" nnoremap J <C-W><Down>
-" nnoremap K <C-W><Up>
-" nnoremap H <C-W><Left>
-" nnoremap L <C-W><Right>
-"
-let NERDTreeDirArrowCollapsible = '▾'
-let NERDTreeDirArrowExpandable = '›'
-
-vmap <C-c> :w !pbcopy<CR><CR>
-
-" Even out the windows easier
-nmap <leader>= <C-W>=
-
-" Window resizing (narrower-width, wider-width, shorter-height, taller-height)
-nmap < <C-W><
-nmap > <C-W>>
-" nmap <C-W>, <C-W>-
-" nmap <C-W>. <C-W>+
-
-" Copy that nice little keybinding from vimuim
-nmap << :tabmove -1<CR>
-nmap >> :tabmove +1<CR>
-
-" Get off my lawn (h/t @molly)
-nnoremap <Left>  :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up>    :echoe "Use k"<CR>
-nnoremap <Down>  :echoe "Use j"<CR>
-
-" NERDTree - close if it's all that's left open
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
-" Wrap text at 80 lines when we're markdowning
-" https://robots.thoughtbot.com/wrap-existing-text-at-80-characters-in-vim
-au BufRead,BufNewFile *.md setlocal textwidth=80
-au BufRead,BufNewFile *.md set ft=markdown
-
-"🎶  To the right, to the right 🎶
-let g:NERDTreeWinPos = "right"
-
-" Toggle the File drawer.
-nmap <leader>; :NERDTreeToggle<CR>
-
-" Enabling GitGutter (Fish isn't POSIX compliant)
-let g:gitgutter_realtime = 1
-let g:updatetime = 1000
-
-" Some help for emmet.vim:
-let g:user_emmet_mode='in'
-let g:user_emmet_settings = {
-  \  'php' : {
-  \    'extends' : 'html',
-  \    'filters' : 'c',
-  \  },
-  \  'twig' : {
-  \    'extends' : 'html',
-  \  },
-  \}
-
-" Never make a mistake again!
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_aggregate_errors = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_javascript_checkers = ['jshint']
-let g:syntastic_scss_checkers = ['scss_lint']
-let g:syntastic_scss_scss_lint_args = '-c ~/.scss-lint.yml'
-let g:syntastic_html_tidy_args = '-config ~/.tidy.conf'
-let g:syntastic_php_checkers = ['php', 'phpcs']
-let g:syntastic_php_phpcs_args = '--report=csv --standard=' . $HOME . '/.phpcs.xml'
-let g:syntastic_stl_format = '%E{Err. %e}%B{, }%W{War. %w}'
-let g:syntastic_error_symbol = "●"
-let g:syntastic_warning_symbol = "●"
-let g:syntastic_style_error_symbol = "●"
-let g:syntastic_style_warning_symbol = "●"
-
-" Per-Project configs
-if filereadable($PWD . '/phpcs.xml')
-    let g:syntastic_php_phpcs_args = '--report=csv --standard=' . $PWD . '/phpcs.xml'
-endif
-
-" Automatically close html tags with omni completion
-" and keep editing in between the tags
-" imap <silent> </ </<C-X><C-O><Esc>T<hi
-
-"" Make emmett a little more like it was in the ST3 days.
-nmap <tab> <C-y>,i
-imap <leader><tab> <C-y>
-
-" Nice little shortcuts for js object tabularizing, h/t VimCasts
-vmap <leader>\ :'<,'>Tabularize /\|<CR>:'<,'>Tabularize /=<CR>:'<,'>Tabularize /:\zs<CR>
-vmap <leader>= :'<,'>Tabularize /=<CR>
-vmap <leader>; :'<,'>Tabularize /:\zs<CR>
-vmap => :'<,'>Tabularize /=><CR>
-
-" Let syntastic at some other linters (phpcs), in composer libs
-let $PATH=$PATH . ':' . expand('~/.composer/vendor/bin')
-
-nnoremap <leader>S :SyntasticToggleMode<CR>
-
-" VimWiki
-let g:vimwiki_list = [{'path':'~/.vimwiki',
-  \ 'syntax': 'markdown',
-  \ 'ext': '.md',
-  \ 'path_html': '~/vimwiki',
-  \ 'custom_wiki2html': '~/tmp/wiki2html.sh'
-  \ }]
-let g:vimwiki_folding = 'expr'
-
-" Startify (but only on MacBook)
-if hostname() == "cambook.local"
+    " Copy out to OS X clipboard
+    vmap <C-c> :w !pbcopy<CR><CR>
+    " Use our goofy cowsay header when we know the binary is available
     let g:startify_custom_header =
             \ map(split(system('date | cowsay -f moose'), '\n'), '"   ". v:val')
 endif
-
-nmap <leader>f :echo @%<CR>
-
-" Fzf + Tags
-fu! FzfTagsCurrentWord()
-  let currWord = expand('<cword>')
-  call fzf#vim#tags(currWord)
-endfu
-
-nmap <c-]> :call FzfTagsCurrentWord()<CR>
-nmap <c-p> :Files<CR>
-nmap <c-b> :Buffers<CR>
-nmap <c-f> :Find
-
-" --column: Show column number
-" --line-number: Show line number
-" --no-heading: Do not show file headings in results
-" --fixed-strings: Search term as a literal string
-" --ignore-case: Case insensitive search
-" --no-ignore: Do not respect .gitignore, etc...
-" --hidden: Search hidden files and folders
-" --glob: Additional conditions for search (in this case ignore everything in the .git/ folder and the tags file)
-" --color: Search color options
-command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --glob "!{.git/*,tags}" --color "always" '.shellescape(<q-args>), 1, <bang>0)
+"}}}
 
 " Things I'm in the process of testing
 if filereadable($HOME . "/.vimrc.extra")
