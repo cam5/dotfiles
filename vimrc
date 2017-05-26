@@ -42,10 +42,8 @@ set relativenumber
 set rtp+=~/.fzf                                " Add fzf's dir to runtimepath... it has vim plugs in it.
 
 " enable loading the plugin files for specific file types
-filetype plugin on
-
 " enable indentation file based on file type
-filetype indent on
+filetype plugin indent on
 
 " Use the wonderful sierra as default colourscheme
 colorscheme sierra
