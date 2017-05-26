@@ -82,6 +82,9 @@ source ~/.config/aliases.sh
 # Add z.sh
 source ~/.zee/z.sh
 
+bindkey '^N' forward-word
+bindkey '^P' backward-word
+
 # Add extra zsh stuff and exclude from dotfiles
 if [[ -a $HOME/.zshrc.extra ]]; then
   source ~/.zshrc.extra
