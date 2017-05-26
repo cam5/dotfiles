@@ -106,3 +106,9 @@
 [submodule "vim/bundle/phpcd.vim"]
 	path = vim/bundle/phpcd.vim
 	url = git://github.com/lvht/phpcd.vim
+[submodule "vim/bundle/ultisnips"]
+	path = vim/bundle/ultisnips
+	url = git://github.com/SirVer/ultisnips
+[submodule "vim/bundle/vim-snippets"]
+	path = vim/bundle/vim-snippets
+	url = git://github.com/honza/vim-snippets

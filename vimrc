@@ -187,6 +187,12 @@ let g:vimwiki_folding = 'expr'
 let g:loaded_ale_linters_php_phpcs = 1
 let g:ale_php_phpcs_standard = get(g:, 'ale_php_phpcs_standard', $HOME."/.phpcs.xml")
 " }}}
+
+" Ultisnips {{{
+let g:UltiSnipsExpandTrigger="df"
+let g:UltiSnipsJumpForwardTrigger="<c-n>"
+let g:UltiSnipsJumpBackwardTrigger="<c-p>"
+" }}}
 "}}}
 
 " statusline {{{
