@@ -182,6 +182,11 @@ let g:vimwiki_list = [{'path':'~/.vimwiki',
 
 let g:vimwiki_folding = 'expr'
 " }}}
+
+" ALE {{{
+let g:loaded_ale_linters_php_phpcs = 1
+let g:ale_php_phpcs_standard = get(g:, 'ale_php_phpcs_standard', $HOME."/.phpcs.xml")
+" }}}
 "}}}
 
 " statusline {{{
