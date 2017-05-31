@@ -509,7 +509,7 @@
 	<key>NSWindow Frame NSColorPanel</key>
 	<string>417 610 313 355 0 0 1920 1080 </string>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>399 250 445 77 0 0 1920 1080 </string>
+	<string>399 116 445 77 0 0 1920 1080 </string>
 	<key>NSWindow Frame Preferences</key>
 	<string>343 441 606 456 0 0 1440 900 </string>
 	<key>NSWindow Frame ProfilesPanel</key>
@@ -517,11 +517,11 @@
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>1233 204 400 129 0 0 1920 1080 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>1177 20 700 497 0 0 1920 1080 </string>
+	<string>1130 20 700 497 0 0 1920 1080 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>424 179 606 469 0 0 1920 1080 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>593 157 937 512 0 0 1920 1080 </string>
+	<string>593 123 916 507 0 0 1920 1080 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>967 20 932 497 0 0 1920 1080 </string>
 	<key>NSWindow Frame com.apple.typography_panel_TamsynMedium10x20</key>
@@ -2171,7 +2171,7 @@
 			<key>Use Italic Font</key>
 			<false/>
 			<key>Use Non-ASCII Font</key>
-			<false/>
+			<true/>
 			<key>Use Tab Color</key>
 			<false/>
 			<key>Vertical Spacing</key>
@@ -2293,9 +2293,9 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-05-23T13:38:53Z</date>
+	<date>2017-05-25T20:00:37Z</date>
 	<key>SUSkippedVersion</key>
-	<string>3.1.20170519-nightly</string>
+	<string>3.1.20170525-nightly</string>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>
