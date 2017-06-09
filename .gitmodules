@@ -100,9 +100,6 @@
 [submodule "vim/bundle/VimCompletesMe"]
 	path = vim/bundle/VimCompletesMe
 	url = git://github.com/ajh17/VimCompletesMe.git
-[submodule "vim/bundle/ale"]
-	path = vim/bundle/ale
-	url = git://github.com/w0rp/ale
 [submodule "vim/bundle/phpcd.vim"]
 	path = vim/bundle/phpcd.vim
 	url = git://github.com/lvht/phpcd.vim
