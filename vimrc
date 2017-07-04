@@ -29,6 +29,7 @@ set noswapfile                                 " /
 set scrolloff=1                                " scroll buffer of one line.
 set clipboard=unnamed                          " Use the quotestar register for all yank, delete, change, and put operations that have no register explicitly specified
                                                " @h/t: http://vimcasts.org/episodes/accessing-the-system-clipboard-from-vim/
+set nofoldenable                               " Where there are folds, disable on start
 set hlsearch                                   " Highlight search
 set magic                                      " Set magic on, for regular expressions (special characters)
 set ignorecase                                 " Searches are Non-case-sensitive
@@ -171,11 +172,17 @@ vmap => :'<,'>Tabularize /=><CR>
 " }}}
 
 " VimWiki {{{
-let g:vimwiki_list = [{'path':'~/.vimwiki',
-  \ 'syntax': 'markdown',
-  \ 'ext': '.md',
-  \ 'path_html': '~/vimwiki',
-  \ 'custom_wiki2html': '~/tmp/wiki2html.sh'
+let g:vimwiki_list = [
+  \ {
+    \ 'path':'~/.vimwiki',
+    \ 'syntax': 'markdown',
+    \ 'ext': '.md',
+    \ 'path_html': '~/vimwiki',
+    \ 'custom_wiki2html': '~/tmp/wiki2html.sh'
+  \ }, {
+    \ 'path':'~/borg',
+    \ 'syntax': 'markdown',
+    \ 'ext': '.md'
   \ }]
 
 let g:vimwiki_folding = 'expr'
