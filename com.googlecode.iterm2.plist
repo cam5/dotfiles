@@ -256,7 +256,7 @@
 	<key>Default Bookmark Guid</key>
 	<string>DF3A4499-05E2-4C07-9850-46D8DFDCBD93</string>
 	<key>DimBackgroundWindows</key>
-	<false/>
+	<true/>
 	<key>DimInactiveSplitPanes</key>
 	<true/>
 	<key>DimOnlyText</key>
@@ -515,19 +515,19 @@
 	<key>NSWindow Frame ProfilesPanel</key>
 	<string>1441 21 735 395 0 0 1920 1080 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
-	<string>1233 204 400 129 0 0 1920 1080 </string>
+	<string>1233 461 400 129 0 0 1920 1080 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>1130 20 700 497 0 0 1920 1080 </string>
+	<string>1130 20 700 512 0 0 1920 1080 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>424 179 606 469 0 0 1920 1080 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>593 123 916 507 0 0 1920 1080 </string>
+	<string>593 417 770 429 0 0 1920 1080 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>967 20 932 497 0 0 1920 1080 </string>
 	<key>NSWindow Frame com.apple.typography_panel_TamsynMedium10x20</key>
 	<string>560 755 260 42 0 0 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1920 1080 0 0 1920 1080 </string>
+	<string>21 20 647 1040 0 0 1920 1080 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1342,12 +1342,14 @@
 			<true/>
 			<key>Use Tab Color</key>
 			<true/>
+			<key>Use Underline Color</key>
+			<false/>
 			<key>Vertical Spacing</key>
 			<real>1</real>
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
-			<integer>0</integer>
+			<integer>12</integer>
 			<key>Working Directory</key>
 			<string>/Users/Cam</string>
 		</dict>
@@ -2293,9 +2295,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-05-25T20:00:37Z</date>
-	<key>SUSkippedVersion</key>
-	<string>3.1.20170525-nightly</string>
+	<date>2017-06-21T17:23:13Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>
@@ -2342,7 +2342,7 @@
 		<string>DF3A4499-05E2-4C07-9850-46D8DFDCBD93</string>
 	</dict>
 	<key>UseBorder</key>
-	<true/>
+	<false/>
 	<key>UseCompactLabel</key>
 	<false/>
 	<key>UseLionStyleFullscreen</key>
@@ -2364,9 +2364,9 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.1.20170416-nightly</string>
+	<string>3.1.20170602-nightly</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
-	<integer>0</integer>
+	<integer>3</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
 	<false/>
 </dict>
