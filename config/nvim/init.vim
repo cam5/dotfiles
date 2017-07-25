@@ -8,22 +8,17 @@ execute pathogen#infect('~/.config/nvim/bundle/{}')
 " Reload this config, not just vimrc.
 nmap <leader>r :so ~/.config/nvim/init.vim<CR>
 
-" Signs
-highlight clear SpellBad
-highlight clear SpellCap
-hi SyntasticStyleErrorSign ctermfg=95 ctermbg=none
-hi SyntasticStyleWarningSign ctermfg=239 ctermbg=none
-hi SyntasticErrorSign ctermfg=95 ctermbg=none
-hi SyntasticWarningSign ctermfg=239 ctermbg=none
-hi SpellBad ctermbg=237
-hi SpellCap ctermbg=237
-
 " GitGutter
 hi DiffAdd ctermbg=64
 
 " Tab Colors
 hi Tabline ctermfg=243
 hi TablineSel ctermfg=254
+
+let g:ale_sign_error = '→'
+let g:ale_sign_warning = '•'
+hi ALEErrorSign ctermbg=236 ctermfg=167
+hi ALEWarningSign ctermbg=236 ctermfg=95
 
 
 " Deoplete!
