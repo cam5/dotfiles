@@ -1,3 +1,6 @@
+# Add env.sh
+source ~/.config/env.sh
+
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
 
@@ -73,10 +76,6 @@ export SSH_KEY_PATH="~/.ssh/id_rsa"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# Add env.sh
-source ~/.config/env.sh
-
 source ~/.config/aliases.sh
 
 # Add z.sh
