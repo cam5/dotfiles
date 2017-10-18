@@ -163,14 +163,6 @@ let g:NERDTreeWinPos = "right"
 nmap <leader>; :NERDTreeToggle<CR>
 " }}}
 
-" tabularize {{{
-" Nice little shortcuts for js object tabularizing, h/t VimCasts
-vmap <leader>\ :'<,'>Tabularize /\|<CR>:'<,'>Tabularize /=<CR>:'<,'>Tabularize /:\zs<CR>
-vmap <leader>= :'<,'>Tabularize /=<CR>
-vmap <leader>; :'<,'>Tabularize /:\zs<CR>
-vmap => :'<,'>Tabularize /=><CR>
-" }}}
-
 " VimWiki {{{
 let g:vimwiki_list = [
   \ {
@@ -198,6 +190,15 @@ let g:UltiSnipsExpandTrigger="df"
 let g:UltiSnipsJumpForwardTrigger="<c-n>"
 let g:UltiSnipsJumpBackwardTrigger="<c-p>"
 " }}}
+
+" vim-easy-align {{{
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+" }}}
+
 "}}}
 
 " statusline {{{
