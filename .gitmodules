@@ -34,10 +34,6 @@
 	path = vim/bundle/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired.git
 
-[submodule "host-cambook.local/vim/bundle/YouCompleteMe"]
-	path = host-cambook.local/vim/bundle/YouCompleteMe
-	url = https://github.com/Valloric/YouCompleteMe.git
-
 [submodule "oh-my-zsh"]
 	path = oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh/
@@ -121,3 +117,6 @@
 [submodule "vim/bundle/vim-easy-align"]
 	path = vim/bundle/vim-easy-align
 	url = git://github.com/junegunn/vim-easy-align
+[submodule "vim/bundle/editorconfig-vim"]
+	path = vim/bundle/editorconfig-vim
+	url = git://github.com/editorconfig/editorconfig-vim
