@@ -178,11 +178,19 @@ let g:vimwiki_list = [
   \ }]
 
 let g:vimwiki_folding = 'expr'
+
+map <Leader>x <Plug>VimwikiToggleListItem
+
 " }}}
 
 " ALE {{{
 let g:loaded_ale_linters_php_phpcs = 1
 let g:ale_php_phpcs_standard = get(g:, 'ale_php_phpcs_standard', $HOME."/.phpcs.xml")
+
+if filereadable($PWD."/.phpcs.xml")
+    let g:ale_php_phpcs_standard = $PWD."/.phpcs.xml"
+endif
+
 " }}}
 
 " Ultisnips {{{
