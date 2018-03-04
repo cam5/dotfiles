@@ -20,6 +20,11 @@ let g:ale_sign_warning = '•'
 hi ALEErrorSign ctermbg=236 ctermfg=167
 hi ALEWarningSign ctermbg=236 ctermfg=95
 
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\   'php': ['hack', 'php', 'phpcs', 'phpmd']
+\}
+
 
 " Deoplete!
 nnoremap <leader>d :call deoplete#toggle()<CR>
