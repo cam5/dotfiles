@@ -62,10 +62,6 @@
 	path = vim/bundle/typescript-vim
 	url = https://github.com/leafgarland/typescript-vim.git
 
-[submodule "config/nvim/bundle/deoplete.nvim"]
-	path = config/nvim/bundle/deoplete.nvim
-	url = https://github.com/Shougo/deoplete.nvim
-
 [submodule "zsh-custom/plugins/zsh-autosuggestions"]
 	path = zsh-custom/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions
