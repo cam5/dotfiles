@@ -131,8 +131,12 @@ function! FzfTagsCurrentWord()
   call fzf#vim#tags(currWord)
 endfunction
 
-" h/t http://bit.ly/2qeNqPc
-command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --glob "!{.git/*,tags}" --color "always" '.shellescape(<q-args>), 1, <bang>0)
+command! -bang -nargs=* Find
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --glob "!{.git/*,tags}" --color "always" '.shellescape(<q-args>), 1,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \   <bang>0)
 " --column: Show column number
 " --line-number: Show line number
 " --no-heading: Do not show file headings in results
@@ -205,6 +209,10 @@ xmap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+" }}}
+
+" vim-gitgutter {{{
+let g:gitgutter_async = 0
 " }}}
 
 "}}}
