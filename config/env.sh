@@ -9,9 +9,9 @@ export SYSTEM="/usr/bin:/bin:/usr/sbin:/sbin"
 export X11="/usr/X11/bin"
 export RUBY="~/.rvm/bin:~/.rvm/gems"
 # export COMPOSER="~/.composer/vendor/bin"
-export MAMP="/Applications/MAMP/bin/php/${PHP_VERSION}/bin"
-
-export PATH="$MAMP:$BREW:$RUBY:$SYSTEM:$X11"
+# export MAMP="/Applications/MAMP/bin/php/${PHP_VERSION}/bin"
+export PHP="/usr/local/Cellar/php@7.1/7.1.21/bin"
+export PATH="$PHP:$BREW:$SYSTEM:$X11"
 
 # Owner
 export USER_NAME="dev"
