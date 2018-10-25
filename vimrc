@@ -163,6 +163,8 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 "🎶  To the right, to the right 🎶
 let g:NERDTreeWinPos = "right"
 
+let NERDTreeIgnore = ['\.pyc$']
+
 " Toggle the File drawer.
 nmap <leader>; :NERDTreeToggle<CR>
 " }}}
@@ -190,6 +192,8 @@ map <Leader>x <Plug>VimwikiToggleListItem
 " ALE {{{
 let g:loaded_ale_linters_php_phpcs = 1
 let g:ale_php_phpcs_standard = get(g:, 'ale_php_phpcs_standard', $HOME."/.phpcs.xml")
+
+let g:ale_python_pylint_options = '--load-plugins pylint_django'
 
 if filereadable($PWD."/.phpcs.xml")
     let g:ale_php_phpcs_standard = $PWD."/.phpcs.xml"
