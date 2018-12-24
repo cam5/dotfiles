@@ -1,8 +1,11 @@
+" vim:fdm=marker
+
 source ~/.vim/autoload/pathogen.vim
 source ~/.vimrc
 
 execute pathogen#infect('~/.vim/bundle/{}')
 
+" Invoke neovim-only bundles
 execute pathogen#infect('~/.config/nvim/bundle/{}')
 
 " Reload this config, not just vimrc.
@@ -15,6 +18,7 @@ hi DiffAdd ctermbg=64
 hi Tabline ctermfg=243
 hi TablineSel ctermfg=254
 
+"ALE Config {{{
 let g:ale_sign_error = '→'
 let g:ale_sign_warning = '•'
 hi ALEErrorSign ctermbg=236 ctermfg=167
@@ -25,36 +29,35 @@ let g:ale_linters = {
 \   'php': ['hack', 'php', 'phpcs', 'phpmd']
 \}
 
+let g:ale_fixers = {
+\ 'javascript': ['eslint']
+\}
+"}}}
 
-" Deoplete!
-nnoremap <leader>d :call deoplete#toggle()<CR>
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_camel_case = 1
-let g:deoplete#auto_complete_start_length = 2
+"Language Server config {{{
+let g:LanguageClient_serverCommands = {
+\ 'javascript': ['/usr/local/bin/javascript-typescript-stdio'],
+\ 'python': ['/usr/local/bin/pyls', '-v'],
+\ }
 
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+" Automatically start language servers.
+let g:LanguageClient_autoStart = 1
 
-let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
-let g:deoplete#ignore_sources.php = ['omni']
+let g:LanguageClient_serverCommands = {}
 
-" let g:deoplete#omni#functions = get(g:, 'deoplete#omni#functions', {})
-" let g:deoplete#omni_patterns = get(g:, 'deoplete#omni_patterns', {})
-" let g:deoplete#omni_patterns.php  =
-"     \ '\h\w*\|[^. \t]->\%(\h\w*\)\?\|\h\w*::\%(\h\w*\)\?'
-
-if filereadable($PWD.'/src/tsconfig.json')
-    autocmd! BufWritePost * Neomake
-
-    let g:neomake_typescript_tslint_maker = {
-        \ 'args': [
-            \'%:p',
-            \'--format verbose',
-            \'--type-check',
-            \'--project='.$PWD.'/src/tsconfig.json',
-            \'--exclude="**/node_modules/**"'
-            \],
-        \ 'errorformat': '%E%f[%l\, %c]: %m'
-        \ }
-
-    let g:neomake_typescript_enabled_makers = ['tslint']
+if executable('javascript-typescript-stdio')
+  let g:LanguageClient_serverCommands.javascript = ['javascript-typescript-stdio']
+  autocmd FileType javascript setlocal omnifunc=LanguageClient#complete
+else
+  echo "javascript-typescript-stdio not installed!\n"
+  :cq
 endif
+
+if executable('pyls')
+  let g:LanguageClient_serverCommands.python = ['pyls']
+  autocmd FileType python setlocal omnifunc=LanguageClient#complete
+else
+  echo "pyls not installed!\n"
+  :cq
+endif
+"}}}
