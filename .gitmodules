@@ -121,3 +121,11 @@
 [submodule "ale"]
 	path = vim/bundle/ale
 	url = git://github.com/w0rp/ale.git
+
+[submodule "config/nvim/bundle/LanguageClient-neovim"]
+	path = config/nvim/bundle/LanguageClient-neovim
+	url = git@github.com:autozimu/LanguageClient-neovim.git
+
+[submodule "config/nvim/bundle/LanguageServer-php-neovim"]
+	path = config/nvim/bundle/LanguageServer-php-neovim
+	url = https://github.com/roxma/LanguageServer-php-neovim
