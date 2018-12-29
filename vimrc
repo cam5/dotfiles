@@ -250,7 +250,7 @@ set statusline=%F:%l⧸%L%M%r\ %{&ff}%Y\ [%p%%]\%h%w\ %{fugitive#head()}
 
 " macbook-only {{{
 if hostname() == "cambook.local"
-    set shell=/usr/local/Cellar/bash/4.4.12/bin/bash
+    set shell=/usr/local/Cellar/bash/4.4.23/bin/bash
     " Copy out to OS X clipboard
     vmap <C-c> :w !pbcopy<CR><CR>
     " Use our goofy cowsay header when we know the binary is available
