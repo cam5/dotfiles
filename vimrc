@@ -78,6 +78,10 @@ autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 " Go back to normal mode
 :inoremap kj <Esc>
 
+" Mimic systemwide behaviour for this <C-e> chord while in insert
+:inoremap <C-e> <C-o>A
+:inoremap <C-a> <C-o>I
+
 " Reload config
 nmap <leader>r :so ~/.vimrc<CR>
 
