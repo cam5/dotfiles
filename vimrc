@@ -41,6 +41,7 @@ set numberwidth=5
 set omnifunc=syntaxcomplete#Complete           " By default, just see what completions are offered based on the syntax
 set relativenumber
 set rtp+=~/.fzf                                " Add fzf's dir to runtimepath... it has vim plugs in it.
+set rtp+=~/.vim/after
 
 " enable loading the plugin files for specific file types
 " enable indentation file based on file type
