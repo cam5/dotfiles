@@ -1,5 +1,3 @@
-" vim:fdm=marker
-
 " Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
@@ -40,7 +38,6 @@ set shell=/bin/bash                            " use bash as default shell
 set numberwidth=5
 set omnifunc=syntaxcomplete#Complete           " By default, just see what completions are offered based on the syntax
 set relativenumber
-set rtp+=~/.fzf                                " Add fzf's dir to runtimepath... it has vim plugs in it.
 set rtp+=~/.vim/after
 
 " enable loading the plugin files for specific file types
@@ -52,12 +49,6 @@ colorscheme sierra
 
 " Use the spacebar as the leader.
 let mapleader=" "
-
-" Treat <li> and <p> tags like the block tags they are
-let g:html_indent_tags = 'li\|p'
-
-" Let linter at some other linters (phpcs), in composer libs
-let $PATH=$PATH . ':' . expand('~/.composer/vendor/bin')
 "}}}
 
 " autocmds {{{
@@ -66,13 +57,6 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 " 2-space indent for certain filetypes.
 autocmd BufRead,BufNewFile *.js,*.ts,*.feature,*.scss,*.css setlocal shiftwidth=2 softtabstop=2 tabstop=2
-
-" Wrap text at 80 lines when we're markdowning @see https://robots.thoughtbot.com/wrap-existing-text-at-80-characters-in-vim
-autocmd BufRead,BufNewFile *.md setlocal textwidth=80
-autocmd BufRead,BufNewFile *.md set ft=markdown
-
-" Specify that for PHP files, use phpcomplete as the omnifunc
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 "}}}
 
 " foundational-aliases {{{
@@ -194,18 +178,6 @@ map <Leader>x <Plug>VimwikiToggleListItem
 
 " }}}
 
-" ALE {{{
-let g:loaded_ale_linters_php_phpcs = 1
-let g:ale_php_phpcs_standard = get(g:, 'ale_php_phpcs_standard', $HOME."/.phpcs.xml")
-
-let g:ale_python_pylint_options = '--load-plugins pylint_django'
-
-if filereadable($PWD."/.phpcs.xml")
-    let g:ale_php_phpcs_standard = $PWD."/.phpcs.xml"
-endif
-
-" }}}
-
 " Ultisnips {{{
 let g:UltiSnipsExpandTrigger="df"
 let g:UltiSnipsJumpForwardTrigger="<c-n>"
@@ -252,14 +224,6 @@ set statusline=%F:%l⧸%L%M%r\ %{&ff}%Y\ [%p%%]\%h%w\ %{fugitive#head()}
 " macbook-only {{{
 if hostname() == "cambook.local"
     set shell=/usr/local/Cellar/bash/4.4.23/bin/bash
-    " Copy out to OS X clipboard
-    vmap <C-c> :w !pbcopy<CR><CR>
-    " Use our goofy cowsay header when we know the binary is available
-    let g:startify_custom_header =
-            \ map(split(system('date | cowsay -f moose'), '\n'), '"   ". v:val')
-
-    " Indicates we installed with brew
-    set rtp+=/usr/local/opt/fzf
 endif
 "}}}
 
