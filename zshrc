@@ -78,9 +78,6 @@ export SSH_KEY_PATH="~/.ssh/id_rsa"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source ~/.config/aliases.sh
 
-# Add z.sh
-source ~/.zee/z.sh
-
 bindkey '^N' forward-word
 bindkey '^P' backward-word
 

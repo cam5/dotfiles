@@ -1,3 +1,0 @@
-# https://thoughtbot.github.io/rcm/rcrc.5.html
-
-COPY_ALWAYS="host-cambook.local/vim/bundle/YouCompleteMe/*"
