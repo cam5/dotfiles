@@ -38,25 +38,9 @@
 	path = oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh/
 
-[submodule "vim/bundle/limelight"]
-	path = vim/bundle/limelight
-	url = https://github.com/junegunn/limelight.vim
-
-[submodule "zee"]
-	path = zee
-	url = https://github.com/rupa/z
-
-[submodule "vim/bundle/vim-startify"]
-	path = vim/bundle/vim-startify
-	url = https://github.com/mhinz/vim-startify
-
 [submodule "vim/bundle/vimwiki"]
 	path = vim/bundle/vimwiki
 	url = https://github.com/vimwiki/vimwiki.git
-
-[submodule "vim/bundle/goyo"]
-	path = vim/bundle/goyo
-	url = https://github.com/junegunn/goyo.vim
 
 [submodule "vim/bundle/typescript-vim"]
 	path = vim/bundle/typescript-vim
@@ -74,14 +58,6 @@
 	path = vim/bundle/vim-repeat
 	url = git://github.com/tpope/vim-repeat.git
 
-[submodule "vim/bundle/vimproc.vim"]
-	path = vim/bundle/vimproc.vim
-	url = https://github.com/Shougo/vimproc.vim
-
-[submodule "config/nvim/bundle/tsuquyomi"]
-	path = vim/bundle/tsuquyomi
-	url = https://github.com/Quramy/tsuquyomi
-
 [submodule "vim/bundle/fzf.vim"]
 	path = vim/bundle/fzf.vim
 	url = git://github.com/junegunn/fzf.vim
@@ -89,10 +65,6 @@
 [submodule "vim/bundle/VimCompletesMe"]
 	path = vim/bundle/VimCompletesMe
 	url = git://github.com/ajh17/VimCompletesMe.git
-
-[submodule "vim/bundle/phpcd.vim"]
-	path = vim/bundle/phpcd.vim
-	url = git://github.com/lvht/phpcd.vim
 
 [submodule "vim/bundle/ultisnips"]
 	path = vim/bundle/ultisnips
@@ -121,14 +93,6 @@
 [submodule "ale"]
 	path = vim/bundle/ale
 	url = git://github.com/w0rp/ale.git
-
-[submodule "config/nvim/bundle/LanguageClient-neovim"]
-	path = config/nvim/bundle/LanguageClient-neovim
-	url = git@github.com:autozimu/LanguageClient-neovim.git
-
-[submodule "config/nvim/bundle/LanguageServer-php-neovim"]
-	path = config/nvim/bundle/LanguageServer-php-neovim
-	url = https://github.com/roxma/LanguageServer-php-neovim
 
 [submodule "vim/bundle/vim-polyglot"]
 	path = vim/bundle/vim-polyglot
