@@ -67,6 +67,9 @@ autocmd BufRead,BufNewFile *.js,*.ts,*.feature,*.scss,*.css setlocal shiftwidth=
 :inoremap <C-e> <C-o>A
 :inoremap <C-a> <C-o>I
 
+" Sometimes you still need tabs...
+:inoremap <S-Tab> <C-V><Tab>
+
 " Reload config
 nmap <leader>r :so ~/.vimrc<CR>
 
@@ -223,7 +226,7 @@ set statusline=%F:%l⧸%L%M%r\ %{&ff}%Y\ [%p%%]\%h%w\ %{fugitive#head()}
 
 " macbook-only {{{
 if hostname() == "cambook.local"
-    set shell=/usr/local/Cellar/bash/4.4.23/bin/bash
+    set shell=/usr/local/bin/zsh
 endif
 "}}}
 

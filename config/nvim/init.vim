@@ -26,7 +26,8 @@ hi ALEWarningSign ctermbg=236 ctermfg=95
 
 let g:ale_linters = {
 \   'javascript': ['eslint'],
-\   'php': ['hack', 'php', 'phpcs', 'phpmd']
+\   'php': ['hack', 'php', 'phpcs', 'phpmd'],
+\   'scss': ['scsslint']
 \}
 
 let g:ale_fixers = {

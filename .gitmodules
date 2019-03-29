@@ -129,6 +129,7 @@
 [submodule "config/nvim/bundle/LanguageServer-php-neovim"]
 	path = config/nvim/bundle/LanguageServer-php-neovim
 	url = https://github.com/roxma/LanguageServer-php-neovim
+
 [submodule "vim/bundle/vim-polyglot"]
 	path = vim/bundle/vim-polyglot
 	url = git@github.com:sheerun/vim-polyglot.git
