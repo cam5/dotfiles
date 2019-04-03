@@ -97,3 +97,7 @@
 [submodule "vim/bundle/vim-polyglot"]
 	path = vim/bundle/vim-polyglot
 	url = git@github.com:sheerun/vim-polyglot.git
+
+[submodule "vim/bundle/coc.nvim"]
+	path = vim/bundle/coc.nvim
+	url = git://github.com/neoclide/coc.nvim
