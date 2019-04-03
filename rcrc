@@ -1,1 +1,2 @@
 COPY_ALWAYS="vim/bundle/coc.nvim/*"
+EXCLUDES="Brewfile"
