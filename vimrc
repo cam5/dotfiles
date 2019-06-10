@@ -67,6 +67,13 @@ autocmd BufRead,BufNewFile *.js,*.ts,*.feature,*.scss,*.css setlocal shiftwidth=
 :inoremap <C-e> <C-o>A
 :inoremap <C-a> <C-o>I
 
+" Buffer-jumping
+nnoremap <BS> :b#<CR>
+
+" No chording if you can help it!
+nnoremap <leader>v <C-v>
+nnoremap <C-v> :echoe "Do \<leader\>v"<CR>
+
 " Sometimes you still need tabs...
 :inoremap <S-Tab> <C-V><Tab>
 
