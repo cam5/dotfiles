@@ -1,0 +1,2 @@
+#!/bin/sh
+git submodule update --init --progress --recursive --force --remote vim/bundle/*
