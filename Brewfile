@@ -1,7 +1,8 @@
-tap "kieran-bamforth/repo"
-tap "koekeishiya/formulae"
+tap "alexanderwillner/tap" # Things.sh
+tap "kieran-bamforth/repo" # Langservers
+tap "koekeishiya/formulae" # chunkwm & skhd
 tap "shopify/shopify"
-tap "thoughtbot/formulae"
+tap "thoughtbot/formulae" # rcm, etc.
 tap "universal-ctags/universal-ctags"
 
 brew "ansible"
@@ -21,7 +22,7 @@ brew "ffmpeg"
 brew "fswatch"
 brew "fzf"
 brew "gnutls"
-brew "gpg-agent"
+brew "gnupg"
 brew "graphite2"
 brew "graphviz"
 brew "htop"
