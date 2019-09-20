@@ -18,6 +18,7 @@ endif
 " }}}
 
 
-" Autocomplete {{{
-set omnifunc=phpcomplete#CompletePHP
+" Highlight {{{
+    hi! link phpDocTags phpDefine
+    hi! link phpDocParam phpBoolean
 " }}}
