@@ -1,2 +1,6 @@
 #!/bin/sh
 git submodule update --init --progress --recursive --force --remote vim/bundle/*
+
+echo "Updated submodules. Don't forget to rcup -v vim/bundle/* to link anything new!\n"
+
+echo "\nAdditionally, don't forget to install coc.nvim manually\n"
