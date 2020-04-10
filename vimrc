@@ -213,7 +213,9 @@ if !empty(glob(expand($HOME . '/.vim/bundle/vimwiki')))
   let g:vimwiki_hl_cb_checked = 1
   let g:vimwiki_list_margin = 0
 
-  map <Leader>x <Plug>VimwikiToggleListItem
+  if !empty(glob(expand($HOME . "/.vim/bundle/fzf.vim"))) && !empty(glob(expand($HOME . '/.vim/bundle/vim-zettel'))) && executable('rg')
+    let g:zettel_fzf_command = "rg --column --line-number --ignore-case --no-heading --color=always "
+  endif
 endif
 
 " }}}
