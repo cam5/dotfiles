@@ -137,7 +137,8 @@ set rtp+=/usr/local/opt/fzf
 if !empty(glob(expand($HOME . "/.vim/bundle/fzf.vim")))
   " Aliases
   nmap <c-]><c-]> :call FzfTagsCurrentWord()<CR>
-  nmap <c-p> :GFiles<CR>
+  nmap <c-p> :Files<CR>
+  nmap <c-g> :GFiles<CR>
   nmap <c-b> :Buffers<CR>
   nmap <c-f> :Find<space>
 
@@ -215,6 +216,10 @@ if !empty(glob(expand($HOME . '/.vim/bundle/vimwiki')))
 
   if !empty(glob(expand($HOME . "/.vim/bundle/fzf.vim"))) && !empty(glob(expand($HOME . '/.vim/bundle/vim-zettel'))) && executable('rg')
     let g:zettel_fzf_command = "rg --column --line-number --ignore-case --no-heading --color=always "
+
+    augroup filetype_vimwiki
+      autocmd FileType vimwiki nmap <leader>z :ZettelNew<cr>
+    augroup end
   endif
 endif
 
@@ -271,7 +276,7 @@ set statusline=%F:%l⧸%L%M%r\ %{&ff}%Y\ [%p%%]\%h%w
 "              +-- Full path to the file in the buffer.
 
 if !empty(glob(expand($HOME . '/.vim/bundle/vim-fugitive')))
-  let &statusline.='\ %{fugitive#head()}'
+  let &statusline.=' %{fugitive#head()}'
 endif
 
 "}}}
