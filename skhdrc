@@ -1,0 +1,101 @@
+# Define space mode.
+:: default : yabai -m config active_window_border_color 0xdd0f8288 && echo 'default' > ~/.skhd.mode
+:: jump    : yabai -m config active_window_border_color 0xfa775759 && echo 'jump' > ~/.skhd.mode
+:: resize  : yabai -m config active_window_border_color 0xff005759 && echo 'resize' > ~/.skhd.mode
+:: prefix  : yabai -m config active_window_border_color 0xff709859 && echo 'prefix' > ~/.skhd.mode
+:: passthru : yabai -m config active_window_border_color 0x00000000 && echo 'passthru' > ~/.skhd.mode
+
+ctrl - s                                    ; jump
+0x32                                        ; prefix
+jump, prefix, resize, passthru < escape     ; default
+
+jump   < ctrl - s ; default
+prefix < 0x32     ; resize
+resize < 0x32     ; passthru
+
+# Jump spaces, with displays as edges
+jump < l: ~/.bin/yabai/focus-space.sh next
+jump < h: ~/.bin/yabai/focus-space.sh prev
+
+# Hop to next display
+jump < ctrl - l: yabai -m display --focus next; qes -k "escape";
+jump < ctrl - h: yabai -m display --focus prev; qes -k "escape";
+
+# Fling window to next display (keep focus on current space)
+prefix < ctrl - l: yabai -m window --display next; qes -k "escape";
+prefix < ctrl - h: yabai -m window --display prev; qes -k "escape";
+
+# Set Space Tiling Mode To BSP, Monocle, Floating
+cmd + ctrl - a: yabai -m space --layout bsp
+cmd + ctrl - s: yabai -m space --layout stack
+cmd + ctrl - d: yabai -m space --layout float
+
+# Toggle float
+shift + ctrl - f: yabai -m window --toggle float
+
+# Move window to space & follow & go back to default;
+jump < 1: yabai -m window --space 1 && yabai -m space --focus 1; qes -k "escape";
+jump < 2: yabai -m window --space 2 && yabai -m space --focus 2; qes -k "escape";
+jump < 3: yabai -m window --space 3 && yabai -m space --focus 3; qes -k "escape";
+jump < 4: yabai -m window --space 4 && yabai -m space --focus 4; qes -k "escape";
+jump < 5: yabai -m window --space 5 && yabai -m space --focus 5; qes -k "escape";
+
+# Imitate up/down
+shift + ctrl - j: qes -k "down";
+shift + ctrl - k: qes -k "up";
+shift + ctrl - h: qes -k "left";
+shift + ctrl - l: qes -k "right";
+
+# Imitate option + ←  & option + →
+shift + ctrl + cmd - h: qes -k "alt - left";
+shift + ctrl + cmd - l: qes -k "alt - right";
+
+# Open a terminal under chunkwm, it's marked as "floating"
+# alt - space : open -a /Applications/iTerm.app/Contents/MacOS/iTerm2
+shift + ctrl - n : ~/obs-today.sh
+
+# Zoom Window
+ctrl - 0: yabai -m window --toggle zoom-fullscreen
+
+# Focus within a space
+prefix < h : yabai -m window --focus west && qes -k "escape";
+prefix < j : yabai -m window --focus south && qes -k "escape";
+prefix < k : yabai -m window --focus north && qes -k "escape";
+prefix < l : yabai -m window --focus east && qes -k "escape";
+
+# TODO -- halp this part sucks
+# increase region size
+resize < h : yabai -m window --resize left:-20:0; yabai -m window --resize right:-20:0
+resize < j : yabai -m window --resize bottom:0:20; yabai -m window --resize top:0:20
+resize < k : yabai -m window --resize top:0:-20; yabai -m window --resize bottom:0:-20
+resize < l : yabai -m window --resize right:20:0; yabai -m window --resize left:-20:0
+
+# Override window-cycling
+default, resize < cmd - 0x32 : layout="$(yabai -m config --space $(yabai -m query --spaces --space | jq '.index') layout)" && \
+    if [ "${layout}" = "bsp" ]; then yabai -m window --focus next || yabai -m window --focus first; fi; \
+    if [ "${layout}" = "stack" ]; then yabai -m window --focus stack.next || yabai -m window --focus stack.first; fi
+
+default, resize < cmd + shift - 0x32 : layout="$(yabai -m config --space $(yabai -m query --spaces --space | jq '.index') layout)" && \
+    if [ "${layout}" = "bsp" ]; then yabai -m window --focus prev || yabai -m window --focus last; fi; \
+    if [ "${layout}" = "stack" ]; then yabai -m window --focus stack.prev || yabai -m window --focus stack.last; fi
+
+ctrl + shift - a : termid="$(yabai -m query --windows | jq 'map(select(.app == "WezTerm"))[-1].id')" && \
+    yabai -m window --focus $termid;
+
+ctrl + shift - q : ff="$(yabai -m query --windows | jq 'map(select(.app == "Firefox"))[-1].id')" && \
+    yabai -m window --focus $ff;
+
+ctrl + shift - c : cal="$(yabai -m query --windows | jq 'map(select(.app == "Calendar"))[-1].id')" && \
+    yabai -m window --focus $cal;
+
+ctrl + shift - m : messages="$(yabai -m query --windows | jq 'map(select(.app == "Messages"))[-1].id')" && \
+    yabai -m window --focus $messages;
+
+ctrl + shift - w : wf="$(yabai -m query --windows | jq 'map(select(.app == "WorkFlowy"))[-1].id')" && \
+    yabai -m window --focus $wf;
+
+# Swap Focused Window
+ctrl + alt - h: yabai -m window --swap west
+ctrl + alt - j: yabai -m window --swap south
+ctrl + alt - k: yabai -m window --swap north
+ctrl + alt - l: yabai -m window --swap east
