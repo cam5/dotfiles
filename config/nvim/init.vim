@@ -19,6 +19,7 @@ hi Tabline ctermfg=243
 hi TablineSel ctermfg=254
 
 "ALE Config {{{
+  let g:ale_enabled = 0
   let g:ale_sign_error = '→'
   let g:ale_sign_warning = '•'
   hi ALEErrorSign ctermbg=236 ctermfg=167
@@ -32,3 +33,5 @@ hi TablineSel ctermfg=254
 
   let g:ale_fixers = { 'javascript': ['eslint'] }
 "}}}
+
+source ~/.config/nvim/lua/init.lua
