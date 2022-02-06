@@ -11,7 +11,8 @@ export RUBY="~/.rvm/bin:~/.rvm/gems"
 # export COMPOSER="~/.composer/vendor/bin"
 # export MAMP="/Applications/MAMP/bin/php/${PHP_VERSION}/bin"
 export PHP="/usr/local/Cellar/php@7.1/7.1.21/bin"
-export PATH="$PHP:$BREW:$SYSTEM:$X11"
+export QT="/usr/local/opt/qt@5/bin"
+export PATH="$PHP:$QT:$BREW:$SYSTEM:$X11"
 
 # Owner
 export USER_NAME="dev"
