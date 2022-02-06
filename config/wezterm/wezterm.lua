@@ -8,13 +8,13 @@ return {
     "Pragmata Pro Mono",
   }),
 
-  font_size = 15,
+  font_size = 13,
 
-  line_height = 1.15,
+  line_height = 1.05,
 
   colors = {
     foreground = '#e4e4e4',
-    background = '#1c1c1c',
+    background = '#303030',
     ansi = {
       '#1c1c1c',
       '#af5f00',
