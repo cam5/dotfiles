@@ -14,10 +14,6 @@
 	path = vim/bundle/vim-fugitive
 	url = git://github.com/tpope/vim-fugitive.git
 
-[submodule "vim/bundle/vim-less"]
-	path = vim/bundle/vim-less
-	url = https://github.com/groenewege/vim-less
-
 [submodule "vim/bundle/vim-obsession"]
 	path = vim/bundle/vim-obsession
 	url = git://github.com/tpope/vim-obsession.git
@@ -42,10 +38,6 @@
 	path = vim/bundle/vimwiki
 	url = https://github.com/vimwiki/vimwiki.git
 
-[submodule "vim/bundle/typescript-vim"]
-	path = vim/bundle/typescript-vim
-	url = https://github.com/leafgarland/typescript-vim.git
-
 [submodule "zsh-custom/plugins/zsh-autosuggestions"]
 	path = zsh-custom/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions
@@ -65,14 +57,6 @@
 [submodule "vim/bundle/VimCompletesMe"]
 	path = vim/bundle/VimCompletesMe
 	url = git://github.com/ajh17/VimCompletesMe.git
-
-[submodule "vim/bundle/ultisnips"]
-	path = vim/bundle/ultisnips
-	url = git://github.com/SirVer/ultisnips
-
-[submodule "vim/bundle/vim-snippets"]
-	path = vim/bundle/vim-snippets
-	url = git://github.com/honza/vim-snippets
 
 [submodule "vim/bundle/vdebug"]
 	path = vim/bundle/vdebug
