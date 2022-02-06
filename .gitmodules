@@ -90,17 +90,9 @@
 	path = vim/bundle/editorconfig-vim
 	url = git://github.com/editorconfig/editorconfig-vim
 
-[submodule "ale"]
-	path = vim/bundle/ale
-	url = git://github.com/w0rp/ale.git
-
 [submodule "vim/bundle/vim-polyglot"]
 	path = vim/bundle/vim-polyglot
 	url = git@github.com:sheerun/vim-polyglot.git
-
-[submodule "vim/bundle/coc.nvim"]
-	path = vim/bundle/coc.nvim
-	url = git://github.com/neoclide/coc.nvim
 
 [submodule "vim/bundle/vim-zettel"]
 	path = vim/bundle/vim-zettel

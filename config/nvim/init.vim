@@ -18,20 +18,4 @@ hi DiffAdd ctermbg=64
 hi Tabline ctermfg=243
 hi TablineSel ctermfg=254
 
-"ALE Config {{{
-  let g:ale_enabled = 0
-  let g:ale_sign_error = '→'
-  let g:ale_sign_warning = '•'
-  hi ALEErrorSign ctermbg=236 ctermfg=167
-  hi ALEWarningSign ctermbg=236 ctermfg=95
-
-  let g:ale_linters = {
-  \   'javascript': ['eslint'],
-  \   'php': ['hack', 'php', 'phpcs', 'phpmd'],
-  \   'scss': ['scsslint']
-  \}
-
-  let g:ale_fixers = { 'javascript': ['eslint'] }
-"}}}
-
 source ~/.config/nvim/lua/init.lua
