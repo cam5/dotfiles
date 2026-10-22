@@ -16,18 +16,13 @@ yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 
 # global settings
 yabai -m config mouse_follows_focus          on
-yabai -m config focus_follows_mouse          on
+yabai -m config focus_follows_mouse          off
 yabai -m config window_placement             second_child
-yabai -m config window_topmost               off
-yabai -m config window_shadow                off
-yabai -m config window_opacity               on
+yabai -m config window_shadow                on
+yabai -m config window_opacity               off
 yabai -m config window_opacity_duration      0.0
 yabai -m config active_window_opacity        1.0
 yabai -m config normal_window_opacity        0.98
-yabai -m config window_border                on
-yabai -m config window_border_width          4
-yabai -m config active_window_border_color   0xdd0f8288
-yabai -m config normal_window_border_color   0x00000000
 yabai -m config insert_feedback_color        0xffd75f5f
 yabai -m config split_ratio                  0.67
 yabai -m config auto_balance                 off
@@ -42,10 +37,23 @@ yabai -m config top_padding                  0
 yabai -m config bottom_padding               0
 yabai -m config left_padding                 0
 yabai -m config right_padding                0
-yabai -m config window_gap                   0
+yabai -m config window_gap                   10
 
-yabai -m rule --add app="^System Preferences$" manage=off
-yabai -m rule --add app="^Messages$" manage=off
-yabai -m rule --add app="^Dash$" manage=off
+yabai -m config --space 1 top_padding        10
+yabai -m config --space 1 bottom_padding     10
+yabai -m config --space 1 left_padding       10
+yabai -m config --space 1 right_padding      10
+
+
+yabai -m rule --add app="^System Settings$" manage=off sub-layer=below
+yabai -m rule --add app="^Messages$" manage=off sub-layer=below
+yabai -m rule --add app="^Signal$" manage=off sub-layer=below
+yabai -m rule --add app="^Activity Monitor$" manage=off sub-layer=below
+# yabai -m rule --add app="^Plex" manage=off layer=above
+yabai -m rule --add title="^Picture in Picture$" manage=off mouse_follows_focus=off
+
+# rules only affect windows opened after they are added;
+# apply them to windows that already exist
+yabai -m rule --apply
 
 echo "yabai configuration loaded.."
