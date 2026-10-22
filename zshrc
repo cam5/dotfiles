@@ -1,5 +1,9 @@
 export NVM_DIR="$HOME/.nvm"
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+if [ -s "/opt/homebrew/opt/nvm/nvm.sh" ]; then
+  \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+elif [ -s "$NVM_DIR/nvm.sh" ]; then
+  \. "$NVM_DIR/nvm.sh"  # nvm's own installer (Linux)
+fi
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 GPG_TTY=$(tty)
@@ -54,14 +58,14 @@ autoload -Uz compinit
 compinit
 
 # >>> railway initialize >>>
-source "$HOME/.railway/env"
+[[ -f "$HOME/.railway/env" ]] && source "$HOME/.railway/env"
 # <<< railway initialize <<<
 
 # direnv
-eval "$(direnv hook zsh)"
+(( $+commands[direnv] )) && eval "$(direnv hook zsh)"
 
 # starship prompt
-eval "$(starship init zsh)"
+(( $+commands[starship] )) && eval "$(starship init zsh)"
 
 # tmux: `ta <Tab>` completes live session names (via zsh's _tmux completion).
 alias ta='tmux attach -t'
