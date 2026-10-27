@@ -21,8 +21,8 @@ return require('packer').startup(function()
 
   -- Language Servers & Completion
   use 'neovim/nvim-lspconfig'
-  use 'jose-elias-alvarez/null-ls.nvim'
-  use 'jose-elias-alvarez/nvim-lsp-ts-utils'
+  use 'nvimtools/none-ls.nvim'
+  use 'nvimtools/none-ls-extras.nvim'
 
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 end)
